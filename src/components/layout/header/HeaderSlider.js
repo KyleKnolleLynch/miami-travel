@@ -28,13 +28,13 @@ const HeaderSlider = ({ slides, autoPlay }) => {
     transition: `transform ease-out ${transition}s`,
   };
 
-  // const prevSlide = () => {
-  //   setState({
-  //     ...state,
-  //     activeIndex: activeIndex === 0 ? slides.length - 1 : activeIndex - 1,
-  //     translate: 0,
-  //   });
-  // };
+  const prevSlide = () => {
+    setState({
+      ...state,
+      activeIndex: activeIndex === 0 ? slides.length - 1 : activeIndex - 1,
+      translate: 0,
+    });
+  };
 
   const nextSlide = () => {
     setState({
@@ -88,7 +88,8 @@ const HeaderSlider = ({ slides, autoPlay }) => {
     };
 
     const smooth = (e) => {
-      e.target.className.includes('header-slider-content') && transitionRef.current();
+      e.target.className.includes('header-slider-content') &&
+        transitionRef.current();
     };
 
     const resize = () => {
@@ -113,12 +114,12 @@ const HeaderSlider = ({ slides, autoPlay }) => {
   return (
     <div className='header-slider'>
       <div className='header-slider-content' style={styleDiv}>
-        {_slides.map((_slide, i) => (
+        {_slides.map((_slide ) => (
           <HeaderSlide slide={_slide} key={_slide.id} />
         ))}
       </div>
       <Dots slides={slides} activeIndex={activeIndex} />
-      <Arrows />
+      <Arrows leftClick={prevSlide} rightClick={nextSlide} />
     </div>
   );
 };
