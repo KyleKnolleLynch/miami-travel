@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+$quicksand: 'Quicksand', Arial, Helvetica, sans-serif;
+
+$white-color: #fff;
+$dark-color: #111;
+$thumbBG: #888;
+$scrollbarBG: #eee;
+
+body,
+html {
+  width: 100vw;
+  background: $dark-color;
+  color: $white-color;
+  font-family: $quicksand;
+  font-size: 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: $thumbBG $scrollbarBG;
+  scroll-behavior: smooth;
+
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
+  font-smooth: always;
+
+  font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+body::-webkit-scrollbar {
+  width: 11px;
+}
+
+body::-webkit-scrollbar-track {
+  background: $scrollbarBG;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: $thumbBG;
+  border-radius: 6px;
+  border: 3px solid $scrollbarBG;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin mediaSm {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaMd {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}

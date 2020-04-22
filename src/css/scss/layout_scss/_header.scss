@@ -1,0 +1,112 @@
+header {
+  width: 100vw;
+  //  banner
+  .header-banner {
+    display: flex;
+    align-items: center;
+    background: rgb(0, 174, 255);
+    padding: 1rem 4rem;
+    z-index: 1;
+    img {
+      width: 5rem;
+    }
+    h1 {
+      margin-left: 3rem;
+      letter-spacing: 0.2rem;
+    }
+  }
+
+  //  nav
+  nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 4rem;
+
+    h1 {
+      padding-top: 2rem;
+      z-index: 1;
+      font-size: 2.5rem;
+    }
+    .header-menu {
+      height: 5rem;
+      padding: 3.5rem 2rem 4rem;
+      background: initial;
+      border: none;
+      z-index: 2;
+      .burgerBar {
+        width: 4rem;
+        height: 0.1rem;
+        background: $white-color;
+        transition: transform 500ms ease;
+      }
+      .burgerBar1 {
+        transform: translateY(-0.8rem);
+      }
+      .burgerBar3 {
+        transform: translateY(0.8rem);
+      }
+      &:hover {
+        cursor: pointer;
+      }
+      &:focus {
+        outline: 1px dotted $white-color;
+      }
+    }
+
+    //  nav menu
+    ul {
+      width: 40rem;
+      height: 50rem;
+      position: absolute;
+      top: 7rem;
+      right: 0;
+      background: linear-gradient(
+        to top left,
+        rgb(0, 159, 255),
+        rgb(236, 47, 75)
+      );
+      transform: translate(15rem, -25rem) scale(0);
+      padding: 3rem 2rem;
+      font-size: 2.5rem;
+      border-radius: 0 0 0 4rem;
+      z-index: 1;
+      transition: transform 200ms ease 800ms;
+      li {
+        padding: 2rem;
+      }
+    }
+  }
+  //  nav overlay
+  nav:before {
+    content: '';
+    width: 100%;
+    height: 12rem;
+    position: absolute;
+    top: 7rem;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+}
+
+//  Header Slides
+.header-slider {
+  width: 100vw;
+  height: calc(100vh - 7rem);
+  margin: -13.5rem auto 0;
+  position: relative;
+  overflow: hidden;
+}
+.header-slide {
+  width: 100vw;
+  height: 100%;
+}
+.header-slide-box {
+  max-width: 50rem;
+  margin-top: 25rem;
+  padding: 3rem;
+  font-size: 2.2rem;
+  h1 {
+    margin-bottom: 1rem;
+  }
+}
