@@ -18,7 +18,7 @@ const Header = () => {
     setTimeout(() => (burger1.style.transform = 'rotate(-135deg)'), 500);
     setTimeout(() => (burger2.style.transform = 'rotate(-45deg)'), 500);
     burger3.style.opacity = '0';
-    menuSearcher.style.transform = 'translateX(-27.5rem)';
+    menuSearcher.style.transform = 'translateX(-26.5rem)';
   };
 
   const closeMenu = () => {
@@ -69,7 +69,7 @@ const Header = () => {
             <input type='text' />
           </li>
           <li>
-            <a href='!#'>Events</a>
+            <a href='#section2'>Events</a>
           </li>
           <li>
             <a href='!#'>Things To Do</a>

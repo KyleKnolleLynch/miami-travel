@@ -6,7 +6,8 @@ header {
     align-items: center;
     background: rgb(0, 174, 255);
     padding: 1rem 4rem;
-    z-index: 1;
+    z-index: 2;
+    position: relative;
     img {
       width: 5rem;
     }
@@ -21,7 +22,6 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 3rem 4rem;
-
     h1 {
       padding-top: 2rem;
       z-index: 1;
@@ -34,8 +34,8 @@ header {
       i {
         color: $white-color;
         cursor: pointer;
-        margin-right: 2rem;
-        transition: transform 500ms ease 500ms;
+        margin-right: 3rem;
+        transition: transform 500ms ease 600ms;
       }
       .header-menu {
         height: 5rem;
@@ -100,7 +100,7 @@ header {
   //  nav overlay
   nav:before {
     content: '';
-    width: 100%;
+    width: 100vw;
     height: 12rem;
     position: absolute;
     top: 7rem;
@@ -119,15 +119,19 @@ header {
   overflow: hidden;
 }
 .header-slide {
-  width: 100vw;
+  width: 100%;
   height: 100%;
-}
-.header-slide-box {
-  max-width: 50rem;
-  margin-top: 25rem;
-  padding: 3rem;
-  font-size: 2.2rem;
-  h1 {
-    margin-bottom: 1rem;
+  .header-slide-box {
+    display: inline-block;
+    margin-top: 20rem;
+    padding: 4rem;
+    h1 {
+      margin-bottom: 1rem;
+      font-size: 6rem;
+      letter-spacing: 0.4rem;
+    }
+    p {
+      font-size: 2rem;
+    }
   }
 }

@@ -1,7 +1,108 @@
 @include mediaMd {
-
+  .grid-hot {
+    grid-template-columns: 1fr;
+  }
 }
 
 @include mediaSm {
-  
+  //  header
+  header {
+    nav {
+      padding: 2rem 1.2rem;
+      h1 {
+        max-width: 60%;
+        font-size: 1.8rem;
+        padding-top: 0;
+      }
+      div {
+        transform: scale(0.9);
+        font-size: 0.9rem;
+        i {
+          margin-right: 1rem;
+        }
+        .header-menu {
+          height: 0;
+          padding: 2.5rem 1rem 2.5rem;
+          .burgerBar {
+            width: 3.2rem;
+          }
+        }
+      }
+      ul {
+        width: 36rem;
+        height: 48rem;
+        font-size: 2rem;
+        padding: 2rem 2rem;
+        li {
+          padding: 1.5rem;
+          input {
+            width: 80%;
+            font-size: 2.5rem;
+            padding-top: 0;
+            margin-left: 2rem;
+          }
+        }
+      }
+    }
+    nav:before {
+      height: 10rem;
+    }
+  }
+
+  //  header slider
+  .header-slider {
+    .header-slide-box {
+      display: block;
+      margin-top: 14.5rem;
+      padding: 2.5rem;
+      h1 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  // header dots and arrows
+  .dots,
+  .arrow-div {
+    transform: scale(0.8);
+  }
+  .dots {
+    bottom: 6rem;
+  }
+  .arrow-div {
+    bottom: 5.5rem;
+  }
+
+  //  section 1
+  #section1 {
+    .hot-section-content {
+      h1 {
+        font-size: 3rem;
+        padding: 1rem 2.5rem;
+      }
+      .grid-2.grid-hot {
+        grid-gap: 6rem 0;
+        padding: 1.5rem;
+        margin: 6rem auto;
+      }
+      .grid-2.content-box-hot {
+        min-height: auto;
+        padding: 0.5rem;
+        div:nth-child(1) {
+          padding: 0.7rem;
+          h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+          }
+          p {
+            width: 70%;
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
 }

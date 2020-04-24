@@ -14,21 +14,23 @@ html {
   color: $white-color;
   font-family: $quicksand;
   font-size: 10px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  scrollbar-width: thin;
-  scrollbar-color: $thumbBG $scrollbarBG;
   scroll-behavior: smooth;
-
   text-rendering: optimizeLegibility;
   text-rendering: geometricPrecision;
   font-smooth: always;
-
   font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -webkit-font-smoothing: subpixel-antialiased;
+}
+
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: $thumbBG $scrollbarBG;
+  
 }
 
 body::-webkit-scrollbar {
@@ -52,13 +54,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 @mixin mediaSm {
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 600px) {
     @content;
   }
 }
 
 @mixin mediaMd {
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 768px) {
     @content;
   }
 }
