@@ -12,12 +12,12 @@
       background: url('../images/surf_bg.jpg') no-repeat center center / cover;
     }
     .hot-overlay.hot-blended {
-      opacity: 0.6;
       background: linear-gradient(
         to bottom right,
         rgb(255, 110, 57),
         rgb(46, 0, 130)
       );
+      transition: opacity 500ms ease;
     }
   }
   .hot-section-content {
