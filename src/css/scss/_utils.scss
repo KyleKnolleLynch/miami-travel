@@ -12,6 +12,11 @@ ul {
   list-style: none;
 }
 
+main,
+section {
+  position: relative;
+}
+
 .btn {
   display: inline-block;
   font-size: 1.3rem;
@@ -62,6 +67,22 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.divider-wrapper {
+  position: relative;
+}
+
+.divider {
+  width: 14rem;
+  height: 1.5rem;
+  background: #ccc;
+  margin: auto;
+  z-index: 5;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.75rem;
 }
 
 // .grid-4 {

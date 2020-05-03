@@ -4,8 +4,10 @@ import img2 from '../../images/hot-eats.jpg';
 import img3 from '../../images/djShow.jpg';
 import img4 from '../../images/alligator.jpg';
 import HotBox from '../utils/HotBox';
+import Divider from '../utils/Divider';
 
 const Section1 = () => {
+  const [dividerWidth, setDividerWidth] = useState(1);
   const ref = useRef();
   const [opacity, setOpacity] = useState(0);
   const [node, setNode] = useState(null);
@@ -58,25 +60,38 @@ const Section1 = () => {
     }
   }, [node]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const newWidth = window.scrollY / window.innerHeight;
+      setDividerWidth(newWidth);
+      console.log(`section1: ${newWidth}`);
+    };
+    document.addEventListener('scroll', handleScroll, { passive: true });
+    return () => document.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <section id='section1'>
-      <div className='hot-overlay-wrapper'>
-        <div className='hot-overlay'></div>
-        <div
-          className='hot-overlay hot-blended'
-          ref={ref}
-          style={{ opacity: `${opacity}` }}
-        ></div>
-      </div>
-      <div className='hot-section-content'>
-        <h1>What's Hot</h1>
-        <div className='grid-2 grid-hot'>
-          {state.map((box, i) => (
-            <HotBox content={box} key={i} />
-          ))}
+    <>
+      <section id='section1'>
+        <div className='hot-overlay-wrapper'>
+          <div className='hot-overlay'></div>
+          <div
+            className='hot-overlay hot-blended'
+            ref={ref}
+            style={{ opacity: `${opacity}` }}
+          ></div>
         </div>
-      </div>
-    </section>
+        <div className='hot-section-content'>
+          <h1>What's Hot</h1>
+          <div className='grid-2 grid-hot'>
+            {state.map((box, i) => (
+              <HotBox content={box} key={i} />
+            ))}
+          </div>
+        </div>
+      </section>
+      <Divider width={dividerWidth} />
+    </>
   );
 };
 
