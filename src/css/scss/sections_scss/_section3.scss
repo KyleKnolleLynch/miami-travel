@@ -1,4 +1,23 @@
 #section3 {
-  height: 100vh;
-  background: red;
+  height: 70vh;
+  background: rgba(0, 238, 255, 0.815);
+  .events-grid {
+    display: flex;
+    justify-content: center;
+    margin: 0 4rem;
+    .events-video-container {
+      max-width: 55rem;
+      height: 35vh;
+      margin: 10rem 1.5rem 12rem;
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .events-video-content {
+        color: $dark-color;
+        font-size: 1.4rem;
+      }
+    }
+  }
 }

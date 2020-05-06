@@ -49,7 +49,6 @@ const Header = () => {
     const handleScroll = () => {
       const newWidth = window.scrollY / window.innerHeight + 1;
       setDividerWidth(newWidth);
-      console.log(`header: ${newWidth}`);
     };
     document.addEventListener('scroll', handleScroll, { passive: true });
     return () => document.removeEventListener('scroll', handleScroll);
@@ -62,10 +61,16 @@ const Header = () => {
           <img src={palmSvg} alt='palm_icon' />
           <h1>Travel Miami</h1>
         </div>
-
         <nav>
-          <h1>Explore Greater Miami And Beyond</h1>
-          <div>
+          <div className='header-brand-div'>
+            <div className='brand-title'>
+              <p>Miami</p>
+              <span>Greater Miami Prefecture and Travel Bureau</span>
+            </div>
+            <h2>Explore Greater Miami And Beyond</h2>
+          </div>
+
+          <div className='header-menu-div'>
             <i
               className='fas fa-search fa-3x menu-searcher'
               onClick={() => focusSearcher()}
@@ -81,10 +86,10 @@ const Header = () => {
               <input type='text' />
             </li>
             <li>
-              <a href='#section2'>Events</a>
+              <a href='#section1'>Things To Do</a>
             </li>
             <li>
-              <a href='!#'>Things To Do</a>
+              <a href='!#'>Events</a>
             </li>
             <li>
               <a href='!#'>Eats</a>

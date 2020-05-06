@@ -4,7 +4,7 @@ header {
   .header-banner {
     display: flex;
     align-items: center;
-    background: rgb(0, 174, 255);
+    background: $blue-color;
     padding: 1rem 4rem;
     z-index: 2;
     position: relative;
@@ -21,13 +21,39 @@ header {
   nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 3rem 4rem;
-    h1 {
-      padding-top: 2rem;
+    .header-brand-div {
+      display: grid;
+      grid-template-columns: 22rem 1fr 1fr;
+      align-items: center;
       z-index: 1;
-      font-size: 2.5rem;
+      .brand-title {
+        display: flex;
+        border: 1px solid $white-color;
+        margin: auto;
+         p {
+          background: $blue-color;
+          padding: 0rem 1rem;
+          font-size: 3rem;
+          font-family: $michroma;
+        }
+        span {
+          align-self: center;
+          padding-left: 0.2rem;
+          line-height: 1.1;
+          font-size: 1.1rem;
+        }
+      }
+      h2 {
+        grid-column: span 2;
+        font-size: 2rem;
+        padding-left: 4rem;
+      }
     }
-    div {
+
+    .header-menu-div {
+      justify-self: flex-end;
       z-index: 2;
       display: flex;
       align-items: center;

@@ -78,11 +78,19 @@ section {
   height: 1.5rem;
   background: #ccc;
   margin: auto;
+  border-radius: 0.2rem;
   z-index: 5;
   position: absolute;
   left: 0;
   right: 0;
   bottom: -0.75rem;
+}
+
+.title-tag {
+  font-size: 4rem;
+  margin-top: 3rem;
+  padding: 1rem 3rem;
+  display: inline-block;
 }
 
 // .grid-4 {

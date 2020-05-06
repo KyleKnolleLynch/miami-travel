@@ -33,8 +33,8 @@ export const HeaderData = [
     img: img4,
     title: 'Family Fun',
     desc: 'Lorem ipsum dolor sit amet consectetur.',
-    textColor: '#fff',
-    boxBgColor: 'rgba(230, 180, 14, 0.8)',
+    textColor: '#111',
+    boxBgColor: '#FFEF9F',
   },
   {
     id: 5,

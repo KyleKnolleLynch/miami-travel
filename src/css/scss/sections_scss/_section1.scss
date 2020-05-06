@@ -1,33 +1,24 @@
 #section1 {
   min-height: 80vh;
   overflow: hidden;
-  .hot-overlay-wrapper {
-    .hot-overlay {
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: url('../images/surf_bg.jpg') no-repeat center center / cover;
-    }
-    .hot-overlay.hot-blended {
-      background: linear-gradient(
-        to bottom right,
-        rgb(255, 110, 57),
-        rgb(46, 0, 130)
-      );
-      transition: opacity 500ms ease;
-    }
+  .hot-overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('../images/surf_bg.jpg') no-repeat center center / cover;
+  }
+  .hot-overlay.hot-blended {
+    background: linear-gradient(
+      to bottom right,
+      rgb(255, 110, 57),
+      rgb(46, 0, 130)
+    );
+    transition: opacity 500ms ease;
   }
   .hot-section-content {
     position: relative;
-    h1 {
-      font-size: 4rem;
-      margin-top: 3rem;
-      padding: 1rem 3rem;
-      display: inline-block;
-      background: orange;
-    }
     .grid-2.grid-hot {
       max-width: 160rem;
       grid-gap: 4rem;

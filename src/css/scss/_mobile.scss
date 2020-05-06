@@ -1,6 +1,20 @@
 @include mediaMd {
-  .grid-hot {
+  header > nav > .header-brand-div > h2 {
+    padding-left: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  #section1 .grid-hot {
     grid-template-columns: 1fr;
+  }
+  #section3 {
+    height: auto;
+    .events-grid {
+      flex-direction: column;
+      .events-video-container {
+        max-width: 100%;
+      }
+    }
   }
 }
 
@@ -9,12 +23,22 @@
   header {
     nav {
       padding: 2rem 1.2rem;
-      h1 {
-        max-width: 60%;
-        font-size: 1.8rem;
-        padding-top: 0;
+      .header-brand-div {
+        grid-template-columns: 1fr;
+        grid-gap: 0.8rem 0;
+        .brand-title {
+          max-width: 22rem;
+          margin: 0;
+          span {
+            font-size: 1rem;
+          }
+        }
+        h2 {
+          padding-left: 0;
+        }
       }
-      div {
+
+      .header-menu-div {
         transform: scale(0.9);
         font-size: 0.9rem;
         i {
@@ -53,7 +77,7 @@
   .header-slider {
     .header-slide-box {
       display: block;
-      margin-top: 14.5rem;
+      margin-top: 12.4rem;
       padding: 2.5rem;
       h1 {
         font-size: 3rem;
