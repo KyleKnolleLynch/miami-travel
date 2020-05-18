@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import palmSvg from '../../../images/icons/palm.svg';
+import searchSvg from '../../../images/icons/search.svg';
 import HeaderSlider from './HeaderSlider';
 import { HeaderData } from '../../../data/headerData';
 import Divider from '../../utils/Divider';
@@ -7,43 +8,58 @@ import Divider from '../../utils/Divider';
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [dividerWidth, setDividerWidth] = useState(1);
-  const menu = document.querySelector('nav ul');
-  const menuSearcher = document.querySelector('.menu-searcher');
-  const burger1 = document.querySelector('.burgerBar1');
-  const burger2 = document.querySelector('.burgerBar2');
-  const burger3 = document.querySelector('.burgerBar3');
+  const [menuStyle, setMenuStyle] = useState(
+    'translate(15rem, -25rem) scale(0)'
+  );
+  const [burger1Style, setBurger1Style] = useState({
+    translateY: '-0.8rem',
+    rotate: '0deg',
+  });
+  const [burger2Style, setBurger2Style] = useState({
+    translateY: '0.9rem',
+    rotate: '0deg',
+  });
+  const [burger3Style, setBurger3Style] = useState('1');
+  const [menuSearcherStyle, setMenuSearcherStyle] = useState('translateX(0)');
+  const [menuInputVal, setMenuInputVal] = useState('');
 
-  const openMenu = () => {
-    menu.style.transform = 'translate(0, 0) scale(1)';
-    burger1.style.transform = 'translateY(1rem)';
-    burger2.style.transform = 'translateY(0.9rem)';
-    setTimeout(() => (burger1.style.transform = 'rotate(-135deg)'), 500);
-    setTimeout(() => (burger2.style.transform = 'rotate(-45deg)'), 500);
-    burger3.style.opacity = '0';
-    menuSearcher.style.transform = 'translateX(-26.5rem)';
-  };
-
-  const closeMenu = () => {
-    if (menu && burger1 && burger2) {
-      menu.style.transform = 'translate(15rem, -25rem) scale(0)';
-      burger1.style.transform = 'translateY(1rem) rotate(0deg)';
-      burger2.style.transform = 'translateY(0.9rem) rotate(0deg)';
-      setTimeout(() => (burger1.style.transform = 'translateY(-0.8rem)'), 500);
-      setTimeout(() => (burger2.style.transform = 'translateY(0)'), 500);
-      setTimeout(() => (burger3.style.opacity = '1'), 500);
-      menuSearcher.style.transform = 'translateX(0)';
-      setTimeout(() => (menu.querySelector('input').value = ''), 600);
+  useEffect(() => {
+    if (open) {
+      setMenuStyle('translate(0, 0) scale(1)');
+      setBurger1Style({ translateY: '1rem', rotate: '0deg' });
+      setBurger2Style({ translateY: '0.9rem', rotate: '0deg' });
+      setTimeout(
+        () => setBurger1Style({ translateY: '0', rotate: '-135deg' }),
+        500
+      );
+      setTimeout(
+        () => setBurger2Style({ translateY: '0', rotate: '-45deg' }),
+        500
+      );
+      setBurger3Style('0');
+      setMenuSearcherStyle('translateX(-26rem)');
+    } else {
+      setMenuStyle('translate(15rem, -25rem) scale(0)');
+      setBurger1Style({ translateY: '1rem', rotate: '0deg' });
+      setBurger2Style({ translateY: '0.9rem', rotate: '0deg' });
+      setTimeout(
+        () => setBurger1Style({ translateY: '-0.8rem', rotate: '0deg' }),
+        500
+      );
+      setTimeout(
+        () => setBurger2Style({ translateY: '0', rotate: '0deg' }),
+        500
+      );
+      setTimeout(() => setBurger3Style('1'), 500);
+      setMenuSearcherStyle('translateX(0)');
+      setTimeout(() => setMenuInputVal(''), 600);
     }
-  };
+  }, [open]);
 
   const focusSearcher = () => {
     setOpen(true);
-    menu && menu.querySelector('input').focus();
+    document.querySelector('.menu-input').focus();
   };
-
-  useEffect(() => {
-    open ? openMenu() : closeMenu();
-  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,7 +72,7 @@ const Header = () => {
 
   return (
     <>
-      <header>
+      <header id='header'>
         <div className='header-banner'>
           <img src={palmSvg} alt='palm_icon' />
           <h1>Travel Miami</h1>
@@ -71,28 +87,49 @@ const Header = () => {
           </div>
 
           <div className='header-menu-div'>
-            <i
-              className='fas fa-search fa-3x menu-searcher'
+            <img
+              src={searchSvg}
+              alt='search_svg'
+              className='menu-searcher'
+              style={{ transform: menuSearcherStyle }}
               onClick={() => focusSearcher()}
-            ></i>
+            />
             <button className='header-menu' onClick={() => setOpen(!open)}>
-              <div className='burgerBar burgerBar1'></div>
-              <div className='burgerBar burgerBar2'></div>
-              <div className='burgerBar burgerBar3'></div>
+              <div
+                className='burgerBar burgerBar1'
+                style={{
+                  transform: `translateY(${burger1Style.translateY}) rotate(${burger1Style.rotate})`,
+                }}
+              ></div>
+              <div
+                className='burgerBar burgerBar2'
+                style={{
+                  transform: `translateY(${burger2Style.translateY}) rotate(${burger2Style.rotate})`,
+                }}
+              ></div>
+              <div
+                className='burgerBar burgerBar3'
+                style={{ opacity: burger3Style }}
+              ></div>
             </button>
           </div>
-          <ul>
+          <ul style={{ transform: menuStyle }}>
             <li>
-              <input type='text' />
+              <input
+                type='text'
+                className='menu-input'
+                value={menuInputVal}
+                onChange={(e) => setMenuInputVal(e.target.value)}
+              />
             </li>
             <li>
               <a href='#section1'>Things To Do</a>
             </li>
             <li>
-              <a href='!#'>Events</a>
+              <a href='#section3'>Events</a>
             </li>
             <li>
-              <a href='!#'>Eats</a>
+              <a href='#section4'>Eats</a>
             </li>
             <li>
               <a href='!#'>Neighborhoods</a>

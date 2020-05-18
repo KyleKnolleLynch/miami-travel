@@ -2,13 +2,14 @@
   height: 70vh;
   background: rgba(0, 238, 255, 0.815);
   .events-grid {
+    width: 100%;
     display: flex;
     justify-content: center;
-    margin: 0 4rem;
+    padding: 0 2rem 0 1rem;
     .events-video-container {
       max-width: 55rem;
       height: 35vh;
-      margin: 10rem 1.5rem 12rem;
+      margin: 8rem 1.5rem 12rem;
       .s3-img-container {
         height: 100%;
         position: relative;
@@ -21,9 +22,15 @@
           display: flex;
           align-items: center;
           justify-content: center;
+          background: rgba(0, 0, 0, 0.2);
           i {
-            padding: 2rem;
-            background: rgba(0, 0, 0, 0.8);
+            padding: 3rem;
+            background: rgba(0, 0, 0, 0.7);
+            transition: 500ms ease;
+            &:hover {
+              background: rgba(0, 0, 0, 1);
+              opacity: 1;
+            }
           }
         }
         img {
@@ -39,6 +46,7 @@
         object-fit: cover;
       }
       .events-video-content {
+        margin-top: 1rem;
         color: $dark-color;
         font-size: 1.4rem;
       }

@@ -57,7 +57,7 @@ header {
       z-index: 2;
       display: flex;
       align-items: center;
-      i {
+      .menu-searcher {
         color: $white-color;
         cursor: pointer;
         margin-right: 3rem;

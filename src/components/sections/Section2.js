@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import video1 from '../../images/walking.m4v';
+import video1 from '../../images/videos/walking.m4v';
 import Divider from '../utils/Divider';
 
 const Section2 = () => {

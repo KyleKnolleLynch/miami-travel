@@ -1,0 +1,59 @@
+#section4 {
+  min-height: 100vh;
+  overflow: hidden;
+  .s4-overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('../images/beach_eats_bg.jpg') no-repeat center center /
+      cover;
+  }
+  .s4-overlay.s4-blended {
+    background: linear-gradient(0deg, #08aeea 0%, #2af598 100%);
+    transition: opacity 500ms ease;
+  }
+  .s4-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 8rem 2rem 0;
+    position: relative;
+    div {
+      height: 24rem;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      h2 {
+        font-size: 1.8rem;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    :nth-of-type(1),
+    :nth-of-type(9) {
+      grid-column: span 2;
+      flex-direction: row;
+      h2 {
+        padding-right: 1rem;
+      }
+    }
+    i:hover {
+      opacity: 1;
+    }
+  }
+  .bg1 {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url('../images/food_table.jpg');
+  }
+  .bg2 {
+    background: url('../images/drinks.jpg');
+  }
+}

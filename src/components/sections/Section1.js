@@ -42,11 +42,7 @@ const Section1 = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setOpacity(0.6);
-        } else {
-          setOpacity(0);
-        }
+        entry.isIntersecting ? setOpacity(0.6) : setOpacity(0);
       },
       {
         root: null,
@@ -77,7 +73,7 @@ const Section1 = () => {
         <div
           className='hot-overlay hot-blended'
           ref={ref}
-          style={{ opacity: `${opacity}` }}
+          style={{ opacity }}
         ></div>
         <div className='hot-section-content'>
           <TitleTag title="What's Hot" bgColor='#FFEF9F' color='#111' />
