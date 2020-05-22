@@ -26,7 +26,7 @@ const Section1 = () => {
       link: 'https://www.avalonhotel.com/',
     },
     {
-      title: 'DJ Fizzbuzz',
+      title: 'Miami Music Festival',
       desc: "Don't miss the summer park concert jam.",
       img: img3,
       link: 'https://miamimusicfestival.com/#homepage-2020',

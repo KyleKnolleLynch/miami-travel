@@ -1,8 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react';
 import TitleTag from '../utils/TitleTag';
-import moduleName from 'module'
+import Divider from '../utils/Divider';
 
 const Section4 = () => {
+  const [dividerWidth, setDividerWidth] = useState(1);
   const [opacity, setOpacity] = useState(0);
   const [node, setNode] = useState(null);
   const ref = useRef();
@@ -25,7 +26,19 @@ const Section4 = () => {
     }
   }, [node]);
 
+ 
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const newWidth = window.scrollY / window.innerHeight / 3;
+      setDividerWidth(newWidth);
+    };
+    document.addEventListener('scroll', handleScroll, { passive: true });
+    return () => document.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
+    <>
     <section id='section4'>
       <div className='s4-overlay'></div>
       <div
@@ -77,6 +90,8 @@ const Section4 = () => {
         </div>
       </div>
     </section>
+    <Divider width={dividerWidth} />
+    </>
   );
 };
 

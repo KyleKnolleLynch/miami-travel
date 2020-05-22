@@ -132,7 +132,7 @@ const Header = () => {
               <a href='#section4'>Eats</a>
             </li>
             <li>
-              <a href='!#'>Neighborhoods</a>
+              <a href='#section5'>Neighborhoods</a>
             </li>
             <li>
               <a href='!#'>Attractions</a>

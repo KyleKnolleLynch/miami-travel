@@ -40,7 +40,7 @@ const Section3 = () => {
                   target='frame1'
                   onClick={() => setModalOpen(!modalOpen)}
                 >
-                  <i className='las la-play la-2x'></i>
+                  <i className='las la-play la-4x'></i>
                 </a>
               </span>
               <img src={img1} alt='placeholder' />
@@ -66,7 +66,7 @@ const Section3 = () => {
                   target='frame1'
                   onClick={() => setModalOpen(!modalOpen)}
                 >
-                  <i className='las la-play la-2x'></i>
+                  <i className='las la-play la-4x'></i>
                 </a>
               </span>
               <img src={img2} alt='placeholder' />

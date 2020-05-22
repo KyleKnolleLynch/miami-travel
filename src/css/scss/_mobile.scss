@@ -35,7 +35,7 @@
       grid-template-columns: 1fr;
       margin-bottom: 10rem;
       > div {
-        height: 14rem;
+        height: 20rem;
       }
       :nth-of-type(1),
       :nth-of-type(9) {
@@ -175,7 +175,7 @@
     }
   }
 
-  .video-modal-container > .video-modal > img {
+   .video-modal-container > .video-modal > img {
     top: 2vh;
   }
 }
