@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import HeaderSlide from './HeaderSlide';
+import Weather from '../../utils/Weather';
 import Arrows from '../../utils/Arrows';
 import Dots from '../../utils/Dots';
 
@@ -118,6 +119,7 @@ const HeaderSlider = ({ slides, autoPlay }) => {
           <HeaderSlide slide={_slide} key={_slide.id} />
         ))}
       </div>
+      <Weather />
       <Dots slides={slides} activeIndex={activeIndex} />
       <Arrows leftClick={prevSlide} rightClick={nextSlide} />
     </div>
