@@ -8,14 +8,20 @@ const Weather = () => {
 
   const getWeather = async () => {
     const res = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=Miami,us&units=imperial&appid=${process.env.REACT_APP_WEATHER_KEY}`
+      `https://api.openweathermap.org/data/2.5/weather?q=Miami,us&units=imperial&appid=${process.env.REACT_APP_WEATHER_KEY}`
     );
 
     const resData = await res.json();
-    console.log(resData);
     const curTemp = resData.main.temp.toFixed(0);
-    const curRain = resData.rain['1h'].toFixed(1);
-    setWeather({temp: curTemp, rain: curRain});
+
+    let curRain;
+    if (resData.rain === undefined) {
+      curRain = 0;
+    } else {
+      curRain = resData.rain['1h'].toFixed(1);
+    }
+
+    setWeather({ temp: curTemp, rain: curRain });
   };
 
   useEffect(() => {
@@ -30,7 +36,8 @@ const Weather = () => {
       <hr />
       <p>rain</p>
       <p>
-        {weather.rain}<span>In.</span>
+        {weather.rain}
+        <span>In.</span>
       </p>
     </div>
   );

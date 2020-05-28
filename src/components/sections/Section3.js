@@ -54,7 +54,7 @@ const Section3 = () => {
         <div className='events-video-container'>
           {modalOpen ? (
             <VideoModal
-              name='frame1'
+              name='frame2'
               title='marathon-run-video'
               closeModal={() => setModalOpen(!modalOpen)}
             />
@@ -63,7 +63,7 @@ const Section3 = () => {
               <span>
                 <a
                   href={video2}
-                  target='frame1'
+                  target='frame2'
                   onClick={() => setModalOpen(!modalOpen)}
                 >
                   <i className='las la-play la-4x'></i>

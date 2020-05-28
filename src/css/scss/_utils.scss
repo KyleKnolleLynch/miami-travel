@@ -76,7 +76,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   i {
     margin: 0 12rem;
     opacity: 0.3;
@@ -89,7 +89,7 @@ section {
   }
 }
 
-//  header slider dots 
+//  header slider dots
 .dot {
   padding: 0.4rem;
   margin: 0 1.5rem;
@@ -110,25 +110,25 @@ section {
 .weather-div {
   position: absolute;
   top: 41vh;
-  right: 0.8rem;
+  right: 0;
   padding: 0.4rem 0.6rem;
   background: $blue-color;
-  
   p {
     font-size: 1.4rem;
-    span { 
-      font-family: $michroma;
-      font-size: 1rem;
-      padding-left: 0.3rem;
-    }
-    &:nth-of-type(1), &:nth-of-type(3) {
+    &:nth-of-type(1),
+    &:nth-of-type(3) {
       font-size: 2.1rem;
+      line-height: 1;
     }
     &:nth-of-type(2) {
       font-family: $michroma;
     }
+    span {
+      font-family: $michroma;
+      font-size: 1rem;
+      padding: 0 1rem 0 0.3rem;
+    }
   }
- 
 }
 
 //  section dividers
@@ -187,10 +187,6 @@ section {
   }
 }
 
-// .grid-4 {
-//   display: grid;
-//   grid-template-columns: repeat(4, 1fr);
-// }
 
 .grid-2 {
   display: grid;

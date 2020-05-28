@@ -47,7 +47,7 @@ const Section1 = () => {
       {
         root: null,
         rootMargin: '500px 0px 0px 0px',
-        threshold: 0.6,
+        threshold: 0.7,
       }
     );
     setNode(ref.current);
