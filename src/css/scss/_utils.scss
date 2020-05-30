@@ -42,6 +42,11 @@ section {
   }
 }
 
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 //  to-top arrow
 .return-top {
   position: fixed;
@@ -188,7 +193,4 @@ section {
 }
 
 
-.grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
+

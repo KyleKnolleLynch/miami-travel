@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import TitleTag from '../utils/TitleTag';
-import VideoModal from '../utils/VideoModal';
 
 const Section6 = () => {
   const ref = useRef();
+  const refCam = useRef();
   const [opacity, setOpacity] = useState(0);
   const [node, setNode] = useState(null);
   const [camData, setCamData] = useState([]);
@@ -27,10 +27,22 @@ const Section6 = () => {
   }, [node]);
 
   const getLivecams = async () => {
-    const res = await fetch(`https://api.windy.com/api/webcams/v2/list/nearby=25.77,-80.19,20?key=${process.env.REACT_APP_WEBCAMS_KEY}
-    `);
+    const res = await fetch(
+      `https://api.windy.com/api/webcams/v2/list/bbox=25.940,-80.000,25.500,-80.400?show=webcams:player,image
+    `,
+      {
+        statusCode: 200,
+        headers: {
+          'x-windy-key': process.env.REACT_APP_WEBCAMS_KEY,
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Headers':
+            'Origin, X-Requested-With, Content-Type, Accept',
+        },
+      }
+    );
+
     const resData = await res.json();
-    // console.log(resData.result.webcams);
+    // console.log(resData);
     setCamData(resData.result.webcams);
   };
 
@@ -49,14 +61,23 @@ const Section6 = () => {
         style={{ opacity }}
       ></div>
       <TitleTag title='Livecams' bgColor='rgb(0, 174, 255)' />
-      <div className='livecam-content'>
-        {camData.map((cam) => (
-          <div className='livecam-container' key={cam.id}>
-            <VideoModal title={cam.title} name={cam.title} />
-            <span>{cam.title}</span>
-          </div>
-         
-        ))}
+      <div className='livecam-content grid-2'>
+        <ul>
+          {camData.map((cam) => (
+            <a href={cam.player.live.embed || cam.player.day.embed} target='frame3' key={cam.id}>
+              <li ref={refCam}>{cam.title}</li>
+            </a>
+          ))}
+        </ul>
+        <div className='livecam-container'>
+          <iframe
+            title={refCam.current}
+            name='frame3'
+            width='100%'
+            height='100%'
+            fullscreen='true'
+          ></iframe>
+        </div>
       </div>
     </section>
   );
