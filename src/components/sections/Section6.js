@@ -27,13 +27,12 @@ const Section6 = () => {
   }, [node]);
 
   const getLivecams = async () => {
-    const { REACT_APP_WEBCAMS_KEY } = process.env;
     const res = await fetch(
       'https://api.windy.com/api/webcams/v2/list/bbox=25.940,-80.000,25.500,-80.400?show=webcams:player,image',
       {
         statusCode: 200,
         headers: {
-          'x-windy-key': REACT_APP_WEBCAMS_KEY,
+          'x-windy-key': process.env.REACT_APP_WEBCAMS_KEY,
         },
       }
     );

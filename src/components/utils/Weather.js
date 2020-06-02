@@ -7,9 +7,8 @@ const Weather = () => {
   });
 
   const getWeather = async () => {
-    const { REACT_APP_WEATHER_KEY } = process.env;
     const res = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=Miami,us&units=imperial&appid=${REACT_APP_WEATHER_KEY}`
+      `https://api.openweathermap.org/data/2.5/weather?q=Miami,us&units=imperial&appid=${process.env.REACT_APP_WEATHER_KEY}`
     );
 
     const resData = await res.json();
