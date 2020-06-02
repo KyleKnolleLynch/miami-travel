@@ -3,10 +3,10 @@ import TitleTag from '../utils/TitleTag';
 
 const Section6 = () => {
   const ref = useRef();
-  const refCam = useRef();
   const [opacity, setOpacity] = useState(0);
   const [node, setNode] = useState(null);
   const [camData, setCamData] = useState([]);
+  const [camTitle, setCamTitle] = useState('');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -42,11 +42,11 @@ const Section6 = () => {
     );
 
     const resData = await res.json();
-    // console.log(resData);
-    setCamData(resData.result.webcams);
+    const filteredCams = resData.result.webcams.filter(
+      (webcam) => webcam.player.live.available
+    );
+    setCamData(filteredCams);
   };
-
-  console.log(camData);
 
   useEffect(() => {
     getLivecams();
@@ -64,20 +64,36 @@ const Section6 = () => {
       <div className='livecam-content grid-2'>
         <ul>
           {camData.map((cam) => (
-            <a href={cam.player.live.embed || cam.player.day.embed} target='frame3' key={cam.id}>
-              <li ref={refCam}>{cam.title}</li>
+            <a
+              href={cam.player.live.embed}
+              target='frame3'
+              key={cam.id}
+              onClick={() => setCamTitle(cam.title)}
+            >
+              <li>{cam.title}</li>
             </a>
           ))}
         </ul>
-        <div className='livecam-container'>
-          <iframe
-            title={refCam.current}
-            name='frame3'
-            width='100%'
-            height='100%'
-            fullscreen='true'
-          ></iframe>
-        </div>
+        {camData[0] && (
+          <div className='livecam-container'>
+            <iframe
+              title={camTitle}
+              src={camData[0].player.live.embed}
+              name='frame3'
+              width='100%'
+              height='100%'
+              allow='fullscreen'
+              allowscripts=''
+              allowsameorigin=''
+              marginHeight='0'
+              marginWidth='0'
+              frameBorder='0'
+              autoPlay=''
+              loop
+              style={{ border: 'none' }}
+            ></iframe>
+          </div>
+        )}
       </div>
     </section>
   );

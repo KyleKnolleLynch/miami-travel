@@ -8,7 +8,8 @@ import img2 from '../../images/fireworks_photo.jpg';
 import Divider from '../utils/Divider';
 
 const Section3 = () => {
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modal1Open, setModal1Open] = useState(false);
+  const [modal2Open, setModal2Open] = useState(false);
   const [dividerWidth, setDividerWidth] = useState(1);
 
   useEffect(() => {
@@ -26,22 +27,24 @@ const Section3 = () => {
       <TitleTag title='Upcoming Events' bgColor='hotpink' />
       <div className='events-grid'>
         <div className='events-video-container'>
-          {modalOpen ? (
+          {modal1Open ? (
             <VideoModal
+              source={video1}
               name='frame1'
+              
               title='marathon-run-video'
-              closeModal={() => setModalOpen(!modalOpen)}
+              closeModal={() => setModal1Open(!modal1Open)}
             />
           ) : (
             <div className='s3-img-container'>
-              <span>
-                <a
-                  href={video1}
+              <span onClick={() => setModal1Open(!modal1Open)}>
+                {/* <div */}
+                  {/*  href={video1}
                   target='frame1'
-                  onClick={() => setModalOpen(!modalOpen)}
-                >
+                  onClick={() => setModalOpen(!modalOpen)} */}
+                {/* > */}
                   <i className='las la-play la-4x'></i>
-                </a>
+                {/* </div> */}
               </span>
               <img src={img1} alt='placeholder' />
             </div>
@@ -52,22 +55,24 @@ const Section3 = () => {
           </div>
         </div>
         <div className='events-video-container'>
-          {modalOpen ? (
+          {modal2Open ? (
             <VideoModal
+              source={video2}
               name='frame2'
-              title='marathon-run-video'
-              closeModal={() => setModalOpen(!modalOpen)}
+             
+              title='fireworks-video'
+              closeModal={() => setModal2Open(!modal2Open)}
             />
           ) : (
             <div className='s3-img-container'>
-              <span>
-                <a
+              <span  onClick={() => setModal2Open(!modal2Open)}>
+                {/* <a
                   href={video2}
                   target='frame2'
                   onClick={() => setModalOpen(!modalOpen)}
-                >
+                > */}
                   <i className='las la-play la-4x'></i>
-                </a>
+                {/* </a> */}
               </span>
               <img src={img2} alt='placeholder' />
             </div>

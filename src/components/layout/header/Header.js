@@ -135,7 +135,7 @@ const Header = () => {
               <a href='#section5'>Neighborhoods</a>
             </li>
             <li>
-              <a href='!#'>Attractions</a>
+              <a href='#section6'>Livecams</a>
             </li>
             <li>
               <a href='!#'>Travel Info</a>

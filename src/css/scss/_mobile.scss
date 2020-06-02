@@ -10,17 +10,16 @@
   #section3 {
     height: auto;
     .events-grid {
-      height: auto;
+      height: 130vh;
       flex-direction: column;
-      justify-content: space-evenly;
+      padding-bottom: 20vh;
       .events-video-container {
         max-width: 100%;
+        position: relative;
       }
     }
     .video-modal-container > .video-modal {
-      width: 80%;
-      height: 50%;
-      margin: 5vh auto;
+      height: 50vh;
       img {
         max-width: 25px;
         max-height: 25px;
