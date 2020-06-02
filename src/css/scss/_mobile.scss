@@ -58,6 +58,20 @@
       background-position: right;
     }
   }
+
+  #section6 {
+    .livecam-content {
+      grid-template-columns: 1fr;
+      .livecam-container {
+        width: 100%;
+      }
+      ul {
+        li {
+          margin: 1rem 0;
+        }
+      }
+    }
+  }
 }
 
 @include mediaSm {

@@ -27,16 +27,13 @@ const Section6 = () => {
   }, [node]);
 
   const getLivecams = async () => {
+    const { REACT_APP_WEBCAMS_KEY } = process.env;
     const res = await fetch(
-      `https://api.windy.com/api/webcams/v2/list/bbox=25.940,-80.000,25.500,-80.400?show=webcams:player,image
-    `,
+      'https://api.windy.com/api/webcams/v2/list/bbox=25.940,-80.000,25.500,-80.400?show=webcams:player,image',
       {
         statusCode: 200,
         headers: {
-          'x-windy-key': process.env.REACT_APP_WEBCAMS_KEY,
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Headers':
-            'Origin, X-Requested-With, Content-Type, Accept',
+          'x-windy-key': REACT_APP_WEBCAMS_KEY,
         },
       }
     );
@@ -66,7 +63,7 @@ const Section6 = () => {
           {camData.map((cam) => (
             <a
               href={cam.player.live.embed}
-              target='frame3'
+              target='frame1'
               key={cam.id}
               onClick={() => setCamTitle(cam.title)}
             >
@@ -79,17 +76,13 @@ const Section6 = () => {
             <iframe
               title={camTitle}
               src={camData[0].player.live.embed}
-              name='frame3'
+              name='frame1'
               width='100%'
               height='100%'
-              allow='fullscreen'
-              allowscripts=''
-              allowsameorigin=''
-              marginHeight='0'
-              marginWidth='0'
               frameBorder='0'
-              autoPlay=''
-              loop
+              allow='fullscreen; autoplay; picture-in-picture; xr-spatial-tracking; encrypted-media'
+              allowFullScreen
+              sandbox='allow-scripts allow-presentation allow-same-origin allow-popups'
               style={{ border: 'none' }}
             ></iframe>
           </div>
