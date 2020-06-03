@@ -24,7 +24,7 @@ const Section3 = () => {
   return (
     <>
     <section id='section3'>
-      <TitleTag title='Upcoming Events' bgColor='hotpink' />
+      <TitleTag title='Upcoming Events' bgColor='rgb(255, 105, 180)' />
       <div className='events-grid'>
         <div className='events-video-container'>
           {modal1Open ? (

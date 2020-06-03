@@ -28,7 +28,7 @@ const Section6 = () => {
 
   const getLivecams = async () => {
     const res = await fetch(
-      'https://api.windy.com/api/webcams/v2/list/bbox=25.940,-80.000,25.500,-80.400?show=webcams:player,image',
+      'https://api.windy.com/api/webcams/v2/list/bbox=26.500,-80.000,25.500,-80.500?show=webcams:player',
       {
         statusCode: 200,
         headers: {
@@ -56,7 +56,7 @@ const Section6 = () => {
         ref={ref}
         style={{ opacity }}
       ></div>
-      <TitleTag title='Livecams' bgColor='rgb(0, 174, 255)' />
+      <TitleTag title='Livecams' bgColor='rgba(0, 174, 255, 0.7)' />
       <div className='livecam-content grid-2'>
         <ul>
           {camData.map((cam) => (
@@ -86,6 +86,16 @@ const Section6 = () => {
             ></iframe>
           </div>
         )}
+          <div className='livecams-attr'>
+              Webcams provided by{' '}
+              <a href='https://www.windy.com/' rel='noopener'>
+                windy.com
+              </a>{' '}
+              &mdash;{' '}
+              <a href='https://www.windy.com/webcams/add' rel='noopener'>
+                add a webcam
+              </a>
+            </div>
       </div>
     </section>
   );

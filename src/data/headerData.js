@@ -34,7 +34,7 @@ export const HeaderData = [
     title: 'Family Fun',
     desc: 'Lorem ipsum dolor sit amet consectetur.',
     textColor: '#111',
-    boxBgColor: '#FFEF9F',
+    boxBgColor: 'rgba(255, 239, 159, 0.9)',
   },
   {
     id: 5,

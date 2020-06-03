@@ -46,7 +46,7 @@ const Section4 = () => {
         ref={ref}
         style={{ opacity }}
       ></div>
-      <TitleTag title='Miami Eats' bgColor='rgb(0, 174, 255)' color='#fff' />
+      <TitleTag title='Miami Eats' bgColor='rgba(0, 174, 255, 0.7)' color='#fff' />
       <div className='s4-content'>
         <div className='bg2'>
           <i className='las la-cocktail la-6x'></i>

@@ -6,7 +6,7 @@ const Section5 = () => {
   const { neighborhoods } = useContext(NeighborhoodContext);
   return (
     <section id='section5'>
-      <TitleTag title='Neighborhoods' bgColor='#FFEF9F' color='#111' />
+      <TitleTag title='Neighborhoods' bgColor='rgba(255, 239, 159, 0.7)' color='#111' />
       <div className='neighborhood-grid'>
         {neighborhoods.map((neighborhood) => (
           <div

@@ -81,7 +81,7 @@ const Header = () => {
           <div className='header-brand-div'>
             <div className='brand-title'>
               <p>Miami</p>
-              <span>Greater Miami Prefecture and Travel Bureau</span>
+              <span>Greater Miami Prefecture and Travel Center</span>
             </div>
             <h2>Explore Greater Miami And Beyond</h2>
           </div>
@@ -138,7 +138,7 @@ const Header = () => {
               <a href='#section6'>Livecams</a>
             </li>
             <li>
-              <a href='!#'>Travel Info</a>
+              <a href='#footer'>Travel Info</a>
             </li>
           </ul>
         </nav>

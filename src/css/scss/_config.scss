@@ -7,9 +7,14 @@ $michroma: 'Michroma', Arial, Helvetica, sans-serif;
 $white-color: #fff;
 $dark-color: #111;
 $blue-color: rgb(0, 174, 255);
-$yellow-color: rgba(255, 238, 0, 0.829);
+$yellow-color: rgba(255, 238, 0, 0.827);
 $thumbBG: #888;
 $scrollbarBG: #eee;
+
+:root {
+  scrollbar-color: $thumbBG $scrollbarBG !important;
+  scrollbar-width: thin !important;
+}
 
 body,
 html {

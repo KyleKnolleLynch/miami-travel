@@ -76,7 +76,7 @@ const Section1 = () => {
           style={{ opacity }}
         ></div>
         <div className='hot-section-content'>
-          <TitleTag title="What's Hot" bgColor='#FFEF9F' color='#111' />
+          <TitleTag title="What's Hot" bgColor='rgba(255, 239, 159, 0.7)' color='#111' />
           <div className='grid-2 grid-hot'>
             {state.map((box, i) => (
               <HotBox content={box} key={i} />

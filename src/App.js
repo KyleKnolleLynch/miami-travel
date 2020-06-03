@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import NeighborhoodContextProvider from './context/NeighborhoodContext';
 import Home from './components/pages/Home';
 
 import './css/main.css';
@@ -6,7 +7,9 @@ import './css/main.css';
 const App = () => {
   return (
     <Fragment>
-      <Home />
+      <NeighborhoodContextProvider>
+        <Home />
+      </NeighborhoodContextProvider>
     </Fragment>
   );
 };
