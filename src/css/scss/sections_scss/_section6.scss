@@ -17,12 +17,6 @@
     gap: 2rem;
     margin: 10vh 4vw;
     position: relative;
-    .livecam-container {
-      width: 60vw;
-      max-width: 70rem;
-      height: 40vh;
-      position: relative;
-    }
     ul {
       display: flex;
       flex-direction: column;
@@ -35,9 +29,15 @@
         border-radius: 1rem;
       }
     }
-  }
-  .livecams-attr {
-    grid-column: 2 / 3;
-    font-size: 1.2rem;
+    .livecam-container {
+      width: 60vw;
+      max-width: 70rem;
+      height: 40vh;
+      position: relative;
+    }
+    .livecam-attr {
+      grid-column: 2 / 3;
+      font-size: 1.2rem;
+    }
   }
 }

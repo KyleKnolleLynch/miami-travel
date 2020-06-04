@@ -72,3 +72,9 @@ body::-webkit-scrollbar-thumb {
     @content;
   }
 }
+
+@mixin mediaLg {
+  @media screen and (max-width: 1000px) {
+    @content;
+  }
+}

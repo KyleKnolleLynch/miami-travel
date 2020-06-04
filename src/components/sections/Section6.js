@@ -86,7 +86,7 @@ const Section6 = () => {
             ></iframe>
           </div>
         )}
-          <div className='livecams-attr'>
+          <div className='livecam-attr'>
               Webcams provided by{' '}
               <a href='https://www.windy.com/' rel='noopener'>
                 windy.com
