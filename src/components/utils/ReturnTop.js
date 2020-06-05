@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { animateScroll as scroll } from 'react-scroll';
 
 const ReturnTop = () => {
   useEffect(() => {
@@ -13,10 +14,8 @@ const ReturnTop = () => {
   }, []);
 
   return (
-    <div>
-      <a href='#header' className='return-top'>
-        <i className='las la-chevron-up la-2x'></i>
-      </a>
+    <div className='return-top' onClick={() => scroll.scrollToTop()}>
+      <i className='las la-chevron-up la-2x'></i>
     </div>
   );
 };

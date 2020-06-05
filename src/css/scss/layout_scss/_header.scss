@@ -32,7 +32,7 @@ header {
         display: flex;
         border: 1px solid $white-color;
         margin: auto;
-         p {
+        p {
           background: $blue-color;
           padding: 0rem 1rem;
           font-size: 3rem;
@@ -74,17 +74,20 @@ header {
           background: $white-color;
           transition: transform 500ms ease;
         }
-        .burgerBar1 {
-          transform: translateY(-0.8rem);
-        }
         .burgerBar3 {
           transform: translateY(0.8rem);
+          transition: opacity 200ms ease 300ms;
         }
         &:hover {
           cursor: pointer;
         }
         &:focus {
           outline: 1px dotted $white-color;
+        }
+        .burger-title {
+          margin-top: 1.5rem;
+          color: $white-color;
+          transition: opacity 300ms ease 500ms;
         }
       }
     }

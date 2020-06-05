@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-scroll';
 import palmSvg from '../../../images/icons/palm.svg';
 import searchSvg from '../../../images/icons/search.svg';
 import HeaderSlider from './HeaderSlider';
@@ -12,33 +13,20 @@ const Header = () => {
     'translate(15rem, -25rem) scale(0)'
   );
   const [burger1Style, setBurger1Style] = useState({
-    translateY: '-0.8rem',
-    rotate: '0deg',
+    // translateY: '-0.8rem',
+    // rotate: '0deg',
   });
   const [burger2Style, setBurger2Style] = useState({
-    translateY: '0.9rem',
-    rotate: '0deg',
+    // translateY: '0.9rem',
+    // rotate: '0deg',
   });
-  const [burger3Style, setBurger3Style] = useState('1');
+  const [burger3Style, setBurger3Style] = useState(1);
+  const [burgerTitle, setBurgerTitle] = useState(1);
   const [menuSearcherStyle, setMenuSearcherStyle] = useState('translateX(0)');
   const [menuInputVal, setMenuInputVal] = useState('');
 
   useEffect(() => {
-    if (open) {
-      setMenuStyle('translate(0, 0) scale(1)');
-      setBurger1Style({ translateY: '1rem', rotate: '0deg' });
-      setBurger2Style({ translateY: '0.9rem', rotate: '0deg' });
-      setTimeout(
-        () => setBurger1Style({ translateY: '0', rotate: '-135deg' }),
-        500
-      );
-      setTimeout(
-        () => setBurger2Style({ translateY: '0', rotate: '-45deg' }),
-        500
-      );
-      setBurger3Style('0');
-      setMenuSearcherStyle('translateX(-26rem)');
-    } else {
+    if (!open) {
       setMenuStyle('translate(15rem, -25rem) scale(0)');
       setBurger1Style({ translateY: '1rem', rotate: '0deg' });
       setBurger2Style({ translateY: '0.9rem', rotate: '0deg' });
@@ -50,9 +38,25 @@ const Header = () => {
         () => setBurger2Style({ translateY: '0', rotate: '0deg' }),
         500
       );
-      setTimeout(() => setBurger3Style('1'), 500);
+      setBurger3Style(1);
+      setBurgerTitle(1);
       setMenuSearcherStyle('translateX(0)');
       setTimeout(() => setMenuInputVal(''), 600);
+    } else {
+      setMenuStyle('translate(0, 0) scale(1)');
+      setBurger1Style({ translateY: '1rem', rotate: '0deg' });
+      setBurger2Style({ translateY: '0.9rem', rotate: '0deg' });
+      setTimeout(
+        () => setBurger1Style({ translateY: '0', rotate: '-135deg' }),
+        500
+      );
+      setTimeout(
+        () => setBurger2Style({ translateY: '0', rotate: '-45deg' }),
+        500
+      );
+      setBurger3Style(0);
+      setBurgerTitle(0);
+      setMenuSearcherStyle('translateX(-26rem)');
     }
   }, [open]);
 
@@ -111,6 +115,9 @@ const Header = () => {
                 className='burgerBar burgerBar3'
                 style={{ opacity: burger3Style }}
               ></div>
+              <p className='burger-title' style={{ opacity: burgerTitle }}>
+                MENU
+              </p>
             </button>
           </div>
           <ul style={{ transform: menuStyle }}>
@@ -123,22 +130,34 @@ const Header = () => {
               />
             </li>
             <li>
-              <a href='#section1'>Things To Do</a>
+              <Link to='section1' smooth={true} duration={500}>
+                Things To Do
+              </Link>
             </li>
             <li>
-              <a href='#section3'>Events</a>
+              <Link to='section3' smooth={true} duration={600}>
+                Events
+              </Link>
             </li>
             <li>
-              <a href='#section4'>Eats</a>
+              <Link to='section4' smooth={true} duration={700}>
+                Eats
+              </Link>
             </li>
             <li>
-              <a href='#section5'>Neighborhoods</a>
+              <Link to='section5' smooth={true} duration={800}>
+                Neighborhoods
+              </Link>
             </li>
             <li>
-              <a href='#section6'>Livecams</a>
+              <Link to='section6' smooth={true} duration={900}>
+                Livecams
+              </Link>
             </li>
             <li>
-              <a href='#footer'>Travel Info</a>
+              <Link to='footer' smooth={true} duration={1000}>
+                Travel Info
+              </Link>
             </li>
           </ul>
         </nav>

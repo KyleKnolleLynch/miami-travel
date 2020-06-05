@@ -11,7 +11,7 @@ import img8 from '../images/neighborhoods/coral_gables.jpg';
 export const NeighborhoodContext = createContext();
 
 const NeighborhoodContextProvider = (props) => {
-  const [neighborhoods, setNeighborhoods] = useState([
+  const [neighborhoods] = useState([
     { title: 'Edgewater', img: img1, id: 1 },
     { title: 'South Beach', img: img2, id: 2 },
     { title: 'Brickell', img: img3, id: 3 },

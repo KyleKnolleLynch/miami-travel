@@ -1,17 +1,22 @@
 import React from 'react';
+import { Link, animateScroll as scroll } from 'react-scroll';
 
 const Footer = () => {
   return (
     <footer id='footer'>
       <div className='footer-container'>
         <div className='brand-title-footer'>
-          <p>Miami</p>
-          <span>Travel Miami and its Beaches</span>
+          <span onClick={() => scroll.scrollToTop()}>
+            <p>Miami</p>
+            <span>Travel Miami and its Beaches</span>
+          </span>
         </div>
         <nav>
           <ul>
             <li>
-              <a href='/'>Home</a>
+              <Link to='header' smooth={true} duration={1000}>
+                Home
+              </Link>
             </li>
             <li>
               <a href='#!'>About GMPTB</a>
@@ -43,7 +48,9 @@ const Footer = () => {
           </ul>
         </nav>
         <div className='contacts-box'>
-          <i className='las la-map-marked-alt la-3x'></i>
+          <a href='https://www.google.com/maps/place/Miami,+FL/@25.7824806,-80.2644779,13z/data=!3m1!4b1!4m5!3m4!1s0x88d9b0a20ec8c111:0xff96f271ddad4f65!8m2!3d25.7616798!4d-80.1917902'>
+            <i className='las la-map-marked-alt la-3x'></i>
+          </a>
           <div>
             <p>Greater Miami Prefecture & Travel Center</p>
             <p>000 Ocean Drive</p>
@@ -82,9 +89,9 @@ const Footer = () => {
             </a>
           </li>
         </ul>
-        <a href='#header' className='footer-top-btn'>
+        <div className='footer-top-btn' onClick={() => scroll.scrollToTop()}>
           To Top <i className='las la-angle-up'></i>
-        </a>
+        </div>
         <a href='#!' className='newsletter-btn'>
           <i className='las la-envelope'></i>
           Sign-up For Newsletter
