@@ -4,7 +4,8 @@ img {
   width: 100%;
 }
 
-a, Link {
+a,
+Link {
   text-decoration: none;
   color: inherit;
   &:focus {
@@ -80,6 +81,9 @@ section {
   &:hover {
     opacity: 1;
     cursor: pointer;
+  }
+  &:active {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 }
 
@@ -160,27 +164,28 @@ section {
 //  section dividers
 .divider-wrapper {
   position: relative;
-}
-
-.divider {
-  width: 14rem;
-  height: 1.5rem;
-  background: #ccc;
-  margin: auto;
-  border-radius: 0.2rem;
-  z-index: 5;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -0.75rem;
+  .divider {
+    width: 14rem;
+    height: 1.5rem;
+    background: #ccc;
+    margin: auto;
+    border-radius: 0.2rem;
+    z-index: 5;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.75rem;
+  }
 }
 
 //  section title tags
 .title-tag {
-  font-size: 4rem;
+  font-size: 3.6rem;
   margin-top: 3rem;
   padding: 1rem 3rem;
   display: inline-block;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
   position: relative;
 }
 

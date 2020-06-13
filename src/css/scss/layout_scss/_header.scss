@@ -8,10 +8,10 @@ header {
     padding: 1rem 4rem;
     z-index: 2;
     position: relative;
-    img {
-      width: 5rem;
+    .header-logo img {
+      width: 6rem;
     }
-    h1 {
+    .header-title h1 {
       margin-left: 3rem;
       letter-spacing: 0.2rem;
     }
@@ -22,7 +22,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3rem 4rem;
+    padding: 2rem 4rem;
     .header-brand-div {
       display: grid;
       grid-template-columns: 22rem 1fr 1fr;
@@ -94,8 +94,6 @@ header {
 
     //  nav menu
     ul {
-      width: 45rem;
-      height: 55rem;
       position: absolute;
       top: 7rem;
       right: 0;
@@ -105,7 +103,7 @@ header {
         rgb(236, 47, 75)
       );
       transform: translate(15rem, -25rem) scale(0);
-      padding: 3rem 2rem;
+      padding: 3rem;
       font-size: 2.5rem;
       border-radius: 0 0 0 4rem;
       z-index: 1;
@@ -120,8 +118,7 @@ header {
           font-size: 3rem;
           color: $white-color;
           outline: 0;
-          margin-left: 1rem;
-          padding: 1rem 1rem 0;
+          margin-left: 3rem;
         }
       }
     }
@@ -136,31 +133,5 @@ header {
     left: 0;
     background: rgba(0, 0, 0, 0.5);
     z-index: 1;
-  }
-}
-
-//  Header Slides
-.header-slider {
-  width: 100vw;
-  height: calc(100vh - 7rem);
-  margin: -13.5rem auto 0;
-  position: relative;
-  overflow: hidden;
-}
-.header-slide {
-  width: 100%;
-  height: 100%;
-  .header-slide-box {
-    display: inline-block;
-    margin-top: 20rem;
-    padding: 4rem;
-    h1 {
-      margin-bottom: 1rem;
-      font-size: 6rem;
-      letter-spacing: 0.4rem;
-    }
-    p {
-      font-size: 2rem;
-    }
   }
 }

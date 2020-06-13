@@ -1,10 +1,22 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { NeighborhoodContext } from '../../context/NeighborhoodContext';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import TitleTag from '../utils/TitleTag';
 import Divider from '../utils/Divider';
 
+const fluidVariants1 = {
+  hover: { scale: 1.2 },
+  tap: {
+    scale: 0.8,
+    rotate: -90,
+    borderRadius: '100%',
+    opacity: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
 const Section5 = () => {
-  const { neighborhoods } = useContext(NeighborhoodContext);
   const [dividerWidth, setDividerWidth] = useState(1);
 
   useEffect(() => {
@@ -20,22 +32,27 @@ const Section5 = () => {
     <>
       <section id='section5'>
         <TitleTag
-          title='Hip Neighborhoods'
+          title='Multi-Cultural Art'
           bgColor='rgba(255, 239, 159, 0.7)'
           color='#111'
         />
-        <div className='neighborhood-grid'>
-          {neighborhoods.map((neighborhood) => (
-            <div
-              key={neighborhood.id}
-              className='neighborhood-card'
-              style={{
-                background: `url(${neighborhood.img}) no-repeat center center /cover`,
-              }}
-            >
-              <h2>{neighborhood.title}</h2>
-            </div>
-          ))}
+        <div className='art-wrapper'>
+          <div className='fluid-s5-container'>
+            <div className='fluid-s5-item art1'></div>
+            <motion.div
+              className='fluid-s5-item art2'
+              variants={fluidVariants1}
+              whileHover='hover'
+              whileTap='tap'
+            ></motion.div>
+          </div>
+          <div className='art-content'>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+              facere aut distinctio blanditiis doloremque voluptas molestiae
+              nesciunt repellat natus quaerat. Ut est nemo aspernatur rem.
+            </p>
+          </div>
         </div>
       </section>
       <Divider width={dividerWidth} />

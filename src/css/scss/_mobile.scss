@@ -1,4 +1,7 @@
 @include mediaLg {
+  #neighborhoods > .neighborhoods-display > .neighborhood-grid {
+    gap: 2rem;
+  }
   footer > .footer-container {
     .footer-socials {
       justify-self: flex-start;
@@ -10,7 +13,7 @@
   //  header
   header > nav > .header-brand-div > h2 {
     padding-left: 1.5rem;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   //  sections
@@ -45,6 +48,7 @@
       margin-bottom: 10rem;
       > div {
         height: 20rem;
+        background: rgba(0, 0, 0, 0.4);
       }
       :nth-of-type(1),
       :nth-of-type(9) {
@@ -66,6 +70,21 @@
     }
     .bg2 {
       background-position: right;
+    }
+  }
+
+  #section5 {
+    .art-wrapper {
+      flex-direction: column;
+      .fluid-s5-container {
+        width: 40rem;
+        height: 40rem;
+      }
+      .art-content {
+        font-size: 2rem;
+        max-width: 40rem;
+        margin-top: 6rem;
+      }
     }
   }
 
@@ -109,6 +128,11 @@
 }
 
 @include mediaSm {
+  //  divider
+  .divider-wrapper {
+    opacity: 0;
+  }
+
   //  header
   header {
     nav {
@@ -146,17 +170,11 @@
         }
       }
       ul {
-        width: 36rem;
-        height: 48rem;
         font-size: 2rem;
-        padding: 2rem 2rem;
         li {
           padding: 1.5rem;
           input {
-            width: 80%;
             font-size: 2.5rem;
-            padding-top: 0;
-            margin-left: 2rem;
           }
         }
       }
@@ -170,7 +188,7 @@
   .header-slider {
     .header-slide-box {
       display: block;
-      margin-top: 12.4rem;
+      margin-top: 12.1rem;
       padding: 2.5rem;
       h1 {
         font-size: 3rem;
@@ -211,7 +229,7 @@
     padding: 1rem 2.5rem;
   }
 
-  //  sections
+  // home sections
   #section1 {
     .hot-section-content {
       .grid-2.grid-hot {
@@ -289,5 +307,9 @@
     .footer-copyrights {
       grid-column: span 1;
     }
+  }
+
+  #neighborhoods > .neighborhoods-display > .neighborhood-grid {
+    padding: 10vh 0;
   }
 }

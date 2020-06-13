@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, animateScroll as scroll } from 'react-scroll';
 
 const Footer = () => {
+  const [year, setYear] = useState(null);
+
+  useEffect(() => {
+    const curYear = new Date().getFullYear();
+    setYear(curYear);
+  }, []);
+
   return (
     <footer id='footer'>
       <div className='footer-container'>
@@ -97,7 +104,7 @@ const Footer = () => {
           Sign-up For Newsletter
         </a>
         <div className='footer-copyrights'>
-          <p>&copy; Designed and Coded by Kyle Lynch 2020</p>
+          <p>&copy; Designed and Coded by Kyle Lynch {year}</p>
         </div>
       </div>
     </footer>

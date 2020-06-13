@@ -11,6 +11,12 @@ $yellow-color: rgba(255, 238, 0, 0.827);
 $thumbBG: #888;
 $scrollbarBG: #eee;
 
+:root,
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 body,
 html {
   width: 100vw;
@@ -29,11 +35,6 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -webkit-font-smoothing: subpixel-antialiased;
-}
-
-body {
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
