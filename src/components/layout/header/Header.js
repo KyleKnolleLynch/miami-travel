@@ -123,12 +123,12 @@ const Header = () => {
             <Link to='/'>Home</Link>
           </li>
           <li>
-            <Link to='section3' smooth={true} duration={600}>
+            <Link to='section3' smooth={'true'} duration={600}>
               Events
             </Link>
           </li>
           <li>
-            <Link to='section4' smooth={true} duration={700}>
+            <Link to='section4' smooth={'true'} duration={700}>
               Eats
             </Link>
           </li>
@@ -136,12 +136,12 @@ const Header = () => {
             <Link to='/neighborhoods'>Neighborhoods</Link>
           </li>
           <li>
-            <Link to='section6' smooth={true} duration={900}>
+            <Link to='section6' smooth={'true'} duration={900}>
               Livecams
             </Link>
           </li>
           <li>
-            <Link to='footer' smooth={true} duration={1000}>
+            <Link to='footer' smooth={'true'} duration={1000}>
               Travel Info
             </Link>
           </li>

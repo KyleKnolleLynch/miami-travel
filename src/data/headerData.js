@@ -1,13 +1,19 @@
 import img1 from '../images/header_img.jpg';
+import img1Sm from '../images/header_img_sm.jpg';
 import img2 from '../images/header_beaches.jpg';
+import img2Sm from '../images/header_beaches_sm.jpg';
 import img3 from '../images/header_hotels.jpg';
+import img3Sm from '../images/header_hotels_sm.jpg';
 import img4 from '../images/header_bikes.jpg';
+import img4Sm from '../images/header_bikes_sm.jpg';
 import img5 from '../images/header_city.jpg';
+import img5Sm from '../images/header_city_sm.jpg';
 
 export const HeaderData = [
   {
     id: 1,
     img: img1,
+    imgSm: img1Sm,
     title: 'New Adventures',
     desc: 'Lorem ipsum dolor sit.',
     boxBgColor: 'rgba(0, 134, 175, 0.7)',
@@ -15,6 +21,7 @@ export const HeaderData = [
   {
     id: 2,
     img: img2,
+    imgSm: img2Sm,
     title: 'Relaxing Beaches',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     textColor: '#f3f169',
@@ -23,6 +30,7 @@ export const HeaderData = [
   {
     id: 3,
     img: img3,
+    imgSm: img3Sm,
     title: 'Stylish Hotels',
     desc: 'Lorem ipsum dolor sit amet.',
     textColor: '#fff',
@@ -31,6 +39,7 @@ export const HeaderData = [
   {
     id: 4,
     img: img4,
+    imgSm: img4Sm,
     title: 'Family Fun',
     desc: 'Lorem ipsum dolor sit amet consectetur.',
     textColor: '#111',
@@ -39,6 +48,7 @@ export const HeaderData = [
   {
     id: 5,
     img: img5,
+    imgSm: img5Sm,
     title: 'Night Life',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     textColor: '#fff',
