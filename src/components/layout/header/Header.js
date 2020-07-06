@@ -66,7 +66,7 @@ const Header = () => {
         </Link>
         <Link to='/'>
           <div className='header-title'>
-            <h1>Travel Miami</h1>
+            <h1>Miami Travel</h1>
           </div>
         </Link>
       </div>
@@ -136,9 +136,7 @@ const Header = () => {
             <Link to='/neighborhoods'>Neighborhoods</Link>
           </li>
           <li>
-            <Link to='section6' smooth={'true'} duration={900}>
-              Livecams
-            </Link>
+            <Link to='/livecams'>Livecams</Link>
           </li>
           <li>
             <Link to='footer' smooth={'true'} duration={1000}>

@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 import { NeighborhoodContext } from '../../context/NeighborhoodContext';
 import Header from '../layout/header/Header';
+import imgHero from '../../images/neighborhoods/neighborhood-hero.jpg';
+import imgHeroSm from '../../images/neighborhoods/neighborhood-hero-small.jpg';
 import TitleTag from '../utils/TitleTag';
 import Footer from '../layout/footer/Footer';
 import ReturnTop from '../utils/ReturnTop';
@@ -39,6 +41,11 @@ const Neighborhoods = () => {
     >
       <Header />
       <div className='neighborhoods-hero'>
+      <picture>
+        <source media='(max-width: 600px)' srcSet={imgHeroSm} />
+        <source media='(min-width: 768px)' srcSet={imgHero} />
+        <img src={imgHero} alt='header-slides' />
+      </picture>
         <h1>Neighborhoods</h1>
       </div>
       <section className='neighborhoods-intro'>

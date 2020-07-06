@@ -105,6 +105,7 @@
       }
     }
   }
+
   //  footer
   footer > .footer-container {
     grid-template-columns: 1fr 1fr;
@@ -124,6 +125,11 @@
     .footer-copyrights {
       grid-column: span 2;
     }
+  }
+
+  //  neighborhoods page
+  #neighborhoods > .neighborhoods-hero > h1 {
+    font-size: 4.5rem;
   }
 }
 
@@ -309,7 +315,18 @@
     }
   }
 
-  #neighborhoods > .neighborhoods-display > .neighborhood-grid {
-    padding: 10vh 0;
+  //  neighborhoods page
+  #neighborhoods {
+    .neighborhoods-hero {
+      height: calc(100vh - 4rem);
+      h1 {
+        font-size: 2.6rem;
+        top: 22rem;
+        left: 3rem;
+      }
+    }
+    .neighborhoods-display > .neighborhood-grid {
+      padding: 10vh 0;
+    }
   }
 }
