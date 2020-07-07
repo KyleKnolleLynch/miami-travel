@@ -2,6 +2,7 @@
 img {
   display: block;
   width: 100%;
+  object-fit: cover;
 }
 
 a,
@@ -204,18 +205,16 @@ section {
     background: $dark-color;
     position: relative;
     img {
-      max-width: 40px;
-      max-height: 40px;
       position: absolute;
       top: 7vh;
       right: 20vw;
+      background: $dark-color;
+      border-radius: 0.5rem;
       cursor: pointer;
       z-index: 2;
     }
     video {
-      width: 100%;
-      height: 100%;
-      border: none;
+      object-fit: cover;
     }
   }
 }

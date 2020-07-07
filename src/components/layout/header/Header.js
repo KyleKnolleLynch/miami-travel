@@ -61,7 +61,12 @@ const Header = () => {
       <div className='header-banner'>
         <Link to='/'>
           <div className='header-logo'>
-            <img src={palmSvg} alt='palm_icon' />
+            <img
+              src={palmSvg}
+              alt='palm_icon'
+              loading='lazy'
+              style={{ width: '60px', height: '60px' }}
+            />
           </div>
         </Link>
         <Link to='/'>
@@ -85,7 +90,12 @@ const Header = () => {
             src={searchSvg}
             alt='search_svg'
             className='menu-searcher'
-            style={{ transform: menuSearcherStyle }}
+            loading='lazy'
+            style={{
+              transform: menuSearcherStyle,
+              width: '34px',
+              height: '34px',
+            }}
             onClick={() => focusSearcher()}
           />
           <button className='header-menu' onClick={() => setOpen(!open)}>

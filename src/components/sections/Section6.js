@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import TitleTag from '../utils/TitleTag';
+import imgBg from '../../images/livecam_bg.jpg';
 
 const Section6 = () => {
   const ref = useRef();
@@ -50,7 +51,14 @@ const Section6 = () => {
 
   return (
     <section id='section6'>
-      <div className='livecam-overlay'></div>
+      <div className='livecam-overlay'>
+        <img
+          src={imgBg}
+          alt='livecam_background'
+          loading='lazy'
+          style={{ width: '100%', height: '100%' }}
+        />
+      </div>
       <div
         className='livecam-overlay livecam-blended'
         ref={ref}
@@ -76,26 +84,25 @@ const Section6 = () => {
               title={camTitle}
               src={camData[0].player.live.embed}
               name='frame1'
-              width='100%'
-              height='100%'
               frameBorder='0'
               allow='fullscreen; autoplay; picture-in-picture; xr-spatial-tracking; encrypted-media'
               allowFullScreen
               sandbox='allow-scripts allow-presentation allow-same-origin allow-popups'
-              style={{ border: 'none' }}
+              loading='lazy'
+              style={{ width: '100%', height: '100%', border: 'none' }}
             ></iframe>
           </div>
         )}
-          <div className='livecam-attr'>
-              Webcams provided by{' '}
-              <a href='https://www.windy.com/' rel='noopener'>
-                windy.com
-              </a>{' '}
-              &mdash;{' '}
-              <a href='https://www.windy.com/webcams/add' rel='noopener'>
-                add a webcam
-              </a>
-            </div>
+        <div className='livecam-attr'>
+          Webcams provided by{' '}
+          <a href='https://www.windy.com/' rel='noopener'>
+            windy.com
+          </a>{' '}
+          &mdash;{' '}
+          <a href='https://www.windy.com/webcams/add' rel='noopener'>
+            add a webcam
+          </a>
+        </div>
       </div>
     </section>
   );

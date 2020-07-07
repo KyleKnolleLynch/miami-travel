@@ -8,7 +8,6 @@ import TitleTag from '../utils/TitleTag';
 import Footer from '../layout/footer/Footer';
 import ReturnTop from '../utils/ReturnTop';
 
-
 const pageVariants = {
   hidden: {
     opacity: 0,
@@ -41,11 +40,16 @@ const Neighborhoods = () => {
     >
       <Header />
       <div className='neighborhoods-hero'>
-      <picture>
-        <source media='(max-width: 600px)' srcSet={imgHeroSm} />
-        <source media='(min-width: 768px)' srcSet={imgHero} />
-        <img src={imgHero} alt='header-slides' />
-      </picture>
+        <picture>
+          <source media='(max-width: 600px)' srcSet={imgHeroSm} />
+          <source media='(min-width: 768px)' srcSet={imgHero} />
+          <img
+            src={imgHero}
+            alt='header-slides'
+            loading='lazy'
+            style={{ width: '100%', height: '100%' }}
+          />
+        </picture>
         <h1>Neighborhoods</h1>
       </div>
       <section className='neighborhoods-intro'>
@@ -76,13 +80,13 @@ const Neighborhoods = () => {
         />
         <div className='neighborhood-grid'>
           {neighborhoods.map((neighborhood) => (
-            <div
-              key={neighborhood.id}
-              className='neighborhood-card'
-              style={{
-                background: `url(${neighborhood.img}) no-repeat center center /cover`,
-              }}
-            >
+            <div key={neighborhood.id} className='neighborhood-card'>
+              <img
+                src={neighborhood.img}
+                alt='selected_neighborhoods'
+                loading='lazy'
+                style={{ width: '100%', minHeight: '240px' }}
+              />
               <h2>{neighborhood.title}</h2>
             </div>
           ))}

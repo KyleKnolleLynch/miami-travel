@@ -34,9 +34,7 @@
     .video-modal-container > .video-modal {
       height: 50vh;
       img {
-        max-width: 25px;
-        max-height: 25px;
-        top: 4vh;
+        top: 1vh;
         right: 10vw;
       }
     }
@@ -130,6 +128,21 @@
   //  neighborhoods page
   #neighborhoods > .neighborhoods-hero > h1 {
     font-size: 4.5rem;
+  }
+
+  //  livecams page
+  #livecams-section-1 > h1 {
+    font-size: 5rem;
+  }
+
+  #livecams-section-2 > .livecams-container {
+    h1 {
+      font-size: 2rem;
+    }
+    iframe {
+      width: 65rem;
+      height: 36.6rem;
+    }
   }
 }
 
@@ -262,7 +275,8 @@
   }
   //  modal
   .video-modal-container > .video-modal > img {
-    top: 2vh;
+    max-width: 25px;
+    max-height: 25px;
   }
 
   //  footer
@@ -327,6 +341,26 @@
     }
     .neighborhoods-display > .neighborhood-grid {
       padding: 10vh 0;
+    }
+  }
+
+  //  livecams page
+  #livecams-section-1 > h1 {
+    font-size: 3rem;
+  }
+
+  article.livecams-content > div {
+    font-size: 1.4rem;
+  }
+
+  #livecams-section-2 > .livecams-container {
+    h1 {
+      font-size: 1.3rem;
+      text-align: center;
+    }
+    iframe {
+      width: 35rem;
+      height: 19.7rem;
     }
   }
 }

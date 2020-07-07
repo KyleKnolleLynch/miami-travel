@@ -11,7 +11,12 @@ const HotBox = ({ content: { title, desc, img, link } }) => {
         </a>
       </div>
       <div>
-        <img src={img} alt='hot-box_image' />
+        <img
+          src={img}
+          alt='hot-box_image'
+          loading='lazy'
+          style={{ width: '100%', height: '100%', maxHeight: '22rem' }}
+        />
       </div>
     </div>
   );

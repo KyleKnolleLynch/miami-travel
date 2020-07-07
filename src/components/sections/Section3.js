@@ -39,7 +39,12 @@ const Section3 = () => {
                 <span onClick={() => setModal1Open(!modal1Open)}>
                   <i className='las la-play la-4x'></i>
                 </span>
-                <img src={img1} alt='placeholder' />
+                <img
+                  src={img1}
+                  alt='placeholder'
+                  loading='lazy'
+                  style={{ width: '100%', height: '100%' }}
+                />
               </div>
             )}
             <div className='events-video-content'>
@@ -60,7 +65,12 @@ const Section3 = () => {
                 <span onClick={() => setModal2Open(!modal2Open)}>
                   <i className='las la-play la-4x'></i>
                 </span>
-                <img src={img2} alt='placeholder' />
+                <img
+                  src={img2}
+                  alt='placeholder'
+                  loading='lazy'
+                  style={{ width: '100%', height: '100%' }}
+                />
               </div>
             )}
             <div className='events-video-content'>

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import TitleTag from '../utils/TitleTag';
 import Divider from '../utils/Divider';
+import img1 from '../../images/plane_art.jpg';
+import img2 from '../../images/wall_art.jpg';
 
 const fluidVariants1 = {
   hover: { scale: 1.2 },
@@ -38,13 +40,21 @@ const Section5 = () => {
         />
         <div className='art-wrapper'>
           <div className='fluid-s5-container'>
-            <div className='fluid-s5-item art1'></div>
-            <motion.div
-              className='fluid-s5-item art2'
+            <img
+              src={img1}
+              alt='plane_art'
+              loading='lazy'
+              style={{ width: '98%', height: '98%' }}
+            />
+            <motion.img
               variants={fluidVariants1}
               whileHover='hover'
               whileTap='tap'
-            ></motion.div>
+              src={img2}
+              alt='wall_art'
+              loading='lazy'
+              style={{ width: '100%', height: '100%' }}
+            />
           </div>
           <div className='art-content'>
             <p>

@@ -18,7 +18,14 @@ const Section2 = () => {
     <>
       <section id='section2'>
         <div className='s2-video-container'>
-          <video src={video1} autoPlay muted loop></video>
+          <video
+            src={video1}
+            autoPlay
+            muted
+            loop
+            loading='lazy'
+            style={{ minWidth: '100%', minHeight: '100%' }}
+          ></video>
         </div>
         <div className='s2-content'>
           <h1>Welcome To Miami</h1>
