@@ -12,7 +12,6 @@ const VideoModal = ({ source, title, name, closeModal }) => {
           loading='lazy'
           style={{ width: '40px', height: '40px' }}
         />
-        {/* <iframe title={title} name={name} fullscreen='true'></iframe>  */}
         <video
           src={source}
           autoPlay

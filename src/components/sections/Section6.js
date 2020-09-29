@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import TitleTag from '../utils/TitleTag';
-import imgBg from '../../images/livecam_bg.jpg';
+import imgBg from '../../images/livecam_bg.webp';
 
 const Section6 = () => {
   const ref = useRef();
@@ -8,6 +8,7 @@ const Section6 = () => {
   const [node, setNode] = useState(null);
   const [camData, setCamData] = useState([]);
   const [camTitle, setCamTitle] = useState('');
+  const [staticAlert, setStaticAlert] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -39,10 +40,12 @@ const Section6 = () => {
     );
 
     const resData = await res.json();
-    const filteredCams = resData.result.webcams.filter(
-      (webcam) => webcam.player.live.available
-    );
-    setCamData(filteredCams);
+
+    resData.result.webcams.forEach((cam) => {
+      cam.player.live.available ? setStaticAlert(false) : setStaticAlert(true);
+    });
+
+    setCamData(resData.result.webcams);
   };
 
   useEffect(() => {
@@ -68,32 +71,49 @@ const Section6 = () => {
       <div className='livecam-content grid-2'>
         <ul>
           {camData.map((cam) => (
-            <a
-              href={cam.player.live.embed}
-              target='frame1'
-              key={cam.id}
-              onClick={() => setCamTitle(cam.title)}
-            >
-              <li>{cam.title}</li>
-            </a>
+            <li key={cam.id}>
+              <a
+                href={
+                  cam.player.live.available
+                    ? cam.player.live.embed
+                    : cam.player.day.embed
+                }
+                target='frame1'
+                onClick={() => setCamTitle(cam.title)}
+              >
+                {cam.title}
+              </a>
+            </li>
           ))}
         </ul>
         {camData[0] && (
-          <div className='livecam-container'>
+          <div className='iframe-container'>
             <iframe
               title={camTitle}
-              src={camData[0].player.live.embed}
+              src={
+                camData[0].player.live.available
+                  ? camData[0].player.live.embed
+                  : camData[0].player.day.embed
+              }
               name='frame1'
               frameBorder='0'
               allow='fullscreen; autoplay; picture-in-picture; xr-spatial-tracking; encrypted-media'
               allowFullScreen
               sandbox='allow-scripts allow-presentation allow-same-origin allow-popups'
               loading='lazy'
-              style={{ width: '100%', height: '100%', border: 'none' }}
             ></iframe>
           </div>
         )}
+
         <div className='livecam-attr'>
+          {staticAlert ? (
+            <div className='static-alert'>
+              All livecams currently offline, please enjoy some daytime
+              timelapse cams
+            </div>
+          ) : (
+            ''
+          )}
           Webcams provided by{' '}
           <a href='https://www.windy.com/' rel='noopener'>
             windy.com

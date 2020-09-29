@@ -18,15 +18,19 @@
         bottom: 0;
         margin: auto;
       }
-      .art2 {
-        cursor: pointer;
-      }
     }
     .art-content {
       max-width: 50rem;
       margin: 4rem;
-      font-size: 2.5rem;
+      padding: 3rem;
+      border-radius: 0.5rem 0.5rem 5rem 0.5rem;
+      font-size: 2.4rem;
       color: $dark-color;
+      background: $white-color;
+      &:first-letter {
+        font-size: 4.5rem;
+        padding-right: 0.3rem;
+      }
     }
   }
 }

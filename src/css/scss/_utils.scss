@@ -46,6 +46,7 @@ section {
 .btn {
   display: inline-block;
   font-size: 1.3rem;
+  font-family: inherit;
   border: 1px solid $dark-color;
   border-radius: 6px;
   margin-top: 2rem;
@@ -216,5 +217,20 @@ section {
     video {
       object-fit: cover;
     }
+  }
+}
+
+// iframe container + iframe
+.iframe-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
   }
 }

@@ -6,48 +6,47 @@ import searchSvg from '../../../images/icons/search.svg';
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-  const [menuStyle, setMenuStyle] = useState(
-    'translate(15rem, -25rem) scale(0)'
-  );
+  const [menuStyle, setMenuStyle] = useState('');
   const [burger1Style, setBurger1Style] = useState({});
   const [burger2Style, setBurger2Style] = useState({});
-  const [burger3Style, setBurger3Style] = useState(1);
-  const [burgerTitle, setBurgerTitle] = useState(1);
-  const [menuSearcherStyle, setMenuSearcherStyle] = useState('translateX(0)');
+  const [burger3Style, setBurger3Style] = useState(null);
+  const [burgerTitle, setBurgerTitle] = useState(null);
+  const [menuSearcherStyle, setMenuSearcherStyle] = useState('');
   const [menuInputVal, setMenuInputVal] = useState('');
 
   useEffect(() => {
     if (!open) {
+      //  closed nav menu state
       setMenuStyle('translate(15rem, -25rem) scale(0)');
       setBurger1Style({ translateY: '1rem', rotate: '0deg' });
       setBurger2Style({ translateY: '0.9rem', rotate: '0deg' });
-      setTimeout(
-        () => setBurger1Style({ translateY: '-0.8rem', rotate: '0deg' }),
-        500
-      );
-      setTimeout(
-        () => setBurger2Style({ translateY: '0', rotate: '0deg' }),
-        500
-      );
       setBurger3Style(1);
       setBurgerTitle(1);
       setMenuSearcherStyle('translateX(0)');
+
+      //  close animation delay
+      const delayClose = () => {
+        setBurger1Style((prev) => ({ ...prev, translateY: '-0.8rem' }));
+        setBurger2Style((prev) => ({ ...prev, translateY: '0' }));
+      };
+
+      setTimeout(() => delayClose(), 500);
       setTimeout(() => setMenuInputVal(''), 600);
     } else {
+      //  opened nav menu state
       setMenuStyle('translate(0, 0) scale(1)');
       setBurger1Style({ translateY: '1rem', rotate: '0deg' });
       setBurger2Style({ translateY: '0.9rem', rotate: '0deg' });
-      setTimeout(
-        () => setBurger1Style({ translateY: '0', rotate: '-135deg' }),
-        500
-      );
-      setTimeout(
-        () => setBurger2Style({ translateY: '0', rotate: '-45deg' }),
-        500
-      );
       setBurger3Style(0);
       setBurgerTitle(0);
       setMenuSearcherStyle('translateX(-28rem)');
+
+      //  open animation delay
+      const delayOpen = () => {
+        setBurger1Style({ translateY: '0', rotate: '-135deg' });
+        setBurger2Style({ translateY: '0', rotate: '-45deg' });
+      };
+      setTimeout(() => delayOpen(), 500);
     }
   }, [open]);
 
@@ -124,23 +123,21 @@ const Header = () => {
           <li>
             <input
               type='text'
+              id='searchbar'
               className='menu-input'
               value={menuInputVal}
               onChange={(e) => setMenuInputVal(e.target.value)}
             />
+            <label htmlFor='searchbar'>search</label>
           </li>
           <li>
             <Link to='/'>Home</Link>
           </li>
           <li>
-            <Link to='section3' smooth={'true'} duration={600}>
-              Events
-            </Link>
+            <a href='/#section3'>Events</a>
           </li>
           <li>
-            <Link to='section4' smooth={'true'} duration={700}>
-              Eats
-            </Link>
+            <a href='/#section4'>Eats</a>
           </li>
           <li>
             <Link to='/neighborhoods'>Neighborhoods</Link>
@@ -149,9 +146,10 @@ const Header = () => {
             <Link to='/livecams'>Livecams</Link>
           </li>
           <li>
-            <Link to='footer' smooth={'true'} duration={1000}>
-              Travel Info
-            </Link>
+            <a href='/#footer'>Travel Info</a>
+          </li>
+          <li>
+            <Link to='/credits' href='#footer'>Credits</Link>
           </li>
         </ul>
       </nav>

@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import img1 from '../../images/busTours.jpg';
-import img2 from '../../images/hot-eats.jpg';
-import img3 from '../../images/djShow.jpg';
-import img4 from '../../images/alligator.jpg';
+import img1 from '../../images/busTours.webp';
+import img2 from '../../images/hot-eats.webp';
+import img3 from '../../images/dj.webp';
+import img4 from '../../images/alligator.webp';
 import HotBox from '../utils/HotBox';
 import Divider from '../utils/Divider';
 import TitleTag from '../utils/TitleTag';
@@ -76,7 +76,11 @@ const Section1 = () => {
           style={{ opacity }}
         ></div>
         <div className='hot-section-content'>
-          <TitleTag title="What's Hot" bgColor='rgba(255, 239, 159, 0.7)' color='#111' />
+          <TitleTag
+            title="What's Hot"
+            bgColor='rgba(255, 239, 159, 0.7)'
+            color='#111'
+          />
           <div className='grid-2 grid-hot'>
             {state.map((box, i) => (
               <HotBox content={box} key={i} />

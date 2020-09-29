@@ -3,8 +3,8 @@ import TitleTag from '../utils/TitleTag';
 import VideoModal from '../utils/VideoModal';
 import video1 from '../../images/videos/marathon_480.m4v';
 import video2 from '../../images/videos/fireworks_480.m4v';
-import img1 from '../../images/marathon_photo.jpg';
-import img2 from '../../images/fireworks_photo.jpg';
+import img1 from '../../images/marathon_photo.webp';
+import img2 from '../../images/fireworks_photo.webp';
 import Divider from '../utils/Divider';
 
 const Section3 = () => {

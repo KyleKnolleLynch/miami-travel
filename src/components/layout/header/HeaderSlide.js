@@ -1,5 +1,5 @@
 import React from 'react';
-import imgDefault from '../../../images/header_img.jpg';
+import imgDefault from '../../../images/header_img.webp';
 
 const HeaderSlide = ({ slide }) => {
   const { img, imgSm, title, desc, textColor, boxBgColor } = slide;

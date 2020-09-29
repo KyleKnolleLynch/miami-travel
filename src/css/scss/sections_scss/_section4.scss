@@ -7,7 +7,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: url('../images/beach_eats_bg.jpg') no-repeat center center /
+    background: url('../images/beach_eats_bg.webp') no-repeat center center /
       cover;
   }
   .s4-overlay.s4-blended {
@@ -51,10 +51,10 @@
   }
   .bg1 {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url('../images/eats_bg.jpg');
+      url('../images/eats_bg.webp');
       background-position: center;
   }
   .bg2 {
-    background: url('../images/drinks.jpg');
+    background: url('../images/drinks.webp');
   }
 }

@@ -1,13 +1,13 @@
-import img1 from '../images/header_img.jpg';
-import img1Sm from '../images/header_img_sm.jpg';
-import img2 from '../images/header_beaches.jpg';
-import img2Sm from '../images/header_beaches_sm.jpg';
-import img3 from '../images/header_hotels.jpg';
-import img3Sm from '../images/header_hotels_sm.jpg';
-import img4 from '../images/header_bikes.jpg';
-import img4Sm from '../images/header_bikes_sm.jpg';
-import img5 from '../images/header_city.jpg';
-import img5Sm from '../images/header_city_sm.jpg';
+import img1 from '../images/header_img.webp';
+import img1Sm from '../images/header_img_sm.webp';
+import img2 from '../images/header_beaches.webp';
+import img2Sm from '../images/header_beaches_sm.webp';
+import img3 from '../images/header_hotels.webp';
+import img3Sm from '../images/header_hotels_sm.webp';
+import img4 from '../images/header_bikes.webp';
+import img4Sm from '../images/header_bikes_sm.webp';
+import img5 from '../images/header_city.webp';
+import img5Sm from '../images/header_city_sm.webp';
 
 export const HeaderData = [
   {

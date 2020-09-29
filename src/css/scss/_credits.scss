@@ -1,0 +1,36 @@
+#credits {
+  min-height: 100vh;
+  margin-top: -12rem;
+  padding-top: 20vh;
+  background: $scrollbarBG;
+  color: $dark-color;
+  article {
+    background: $white-color;
+    width: 80vw;
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 4rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 12px rgba(0,0,0,0.2);
+    h1 {
+      font-size: 3rem;
+      text-align: end;
+    }
+    ul {
+      margin: 3rem 0;
+      li {
+        margin-bottom: 1.2rem;
+        span {
+          font-size: 1.5rem;
+        }
+        a {
+          font-weight: bold;
+          font-size: 1.8rem;
+        }
+      }
+    }
+    p {
+      font-size: 1.3rem;
+    }
+  }
+}

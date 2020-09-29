@@ -4,6 +4,7 @@
 * functional components
 * hooks
 * context api
+* framer-motion
 * react-scroll
 * openweather api
 * windy livecam api

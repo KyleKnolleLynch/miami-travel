@@ -16,7 +16,7 @@ import ReturnTop from '../utils/ReturnTop';
 const pageVariants = {
   hidden: {
     opacity: 0,
-    x: '-100vw',
+    x: '100vw',
   },
   visible: {
     opacity: 1,

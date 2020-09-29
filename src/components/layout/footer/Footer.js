@@ -26,31 +26,31 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <a href='#!'>About GMPTB</a>
+              <a href='!#'>About GMPTB</a>
             </li>
             <li>
-              <a href='#!'>Travel Guidelines</a>
+              <a href='!#'>Travel Guidelines</a>
             </li>
             <li>
-              <a href='#!'>Meetups</a>
+              <a href='!#'>Meetups</a>
             </li>
             <li>
-              <a href='#!'>Partnerships</a>
+              <a href='!#'>Partnerships</a>
             </li>
             <li>
-              <a href='#!'>Professionals</a>
+              <a href='!#'>Professionals</a>
             </li>
             <li>
-              <a href='#!'>Careers</a>
+              <a href='!#'>Careers</a>
             </li>
             <li>
-              <a href='#!'>Accessibility</a>
+              <a href='!#'>Accessibility</a>
             </li>
             <li>
-              <a href='#!'>Resources</a>
+              <a href='/credits'>Resources</a>
             </li>
             <li>
-              <a href='#!'>Disclaimer</a>
+              <a href='/credits'>Disclaimer</a>
             </li>
           </ul>
         </nav>
@@ -71,27 +71,27 @@ const Footer = () => {
 
         <ul className='footer-socials'>
           <li>
-            <a href='#!'>
+            <a href='!#'>
               <i className='lab la-instagram la-4x'></i>
             </a>
           </li>
           <li>
-            <a href='#!'>
+            <a href='!#'>
               <i className='lab la-twitter la-4x'></i>
             </a>
           </li>
           <li>
-            <a href='#!'>
+            <a href='!#'>
               <i className='lab la-facebook-square la-4x'></i>
             </a>
           </li>
           <li>
-            <a href='#!'>
+            <a href='!#'>
               <i className='lab la-youtube la-4x'></i>
             </a>
           </li>
           <li>
-            <a href='#!'>
+            <a href='!#'>
               <i className='lab la-linkedin la-4x'></i>
             </a>
           </li>

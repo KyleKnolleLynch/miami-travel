@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import TitleTag from '../utils/TitleTag';
 import Divider from '../utils/Divider';
-import img1 from '../../images/plane_art.jpg';
-import img2 from '../../images/wall_art.jpg';
+import img1 from '../../images/plane_art.webp';
+import img2 from '../../images/wall_art.webp';
 
 const fluidVariants1 = {
-  hover: { scale: 1.2 },
+  hover: { scale: 1.2, cursor: 'pointer' },
   tap: {
     scale: 0.8,
     rotate: -90,
@@ -34,7 +34,7 @@ const Section5 = () => {
     <>
       <section id='section5'>
         <TitleTag
-          title='Multi-Cultural Art'
+          title='Urban Art Culture'
           bgColor='rgba(255, 239, 159, 0.7)'
           color='#111'
         />

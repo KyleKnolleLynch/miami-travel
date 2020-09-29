@@ -35,22 +35,16 @@ article.livecams-content {
 }
 
 #livecams-section-2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 12vh 0;
   background: linear-gradient(
     to bottom right,
     rgb(168, 192, 255),
     rgb(63, 43, 150)
   );
-  .livecams-container {
-    margin: 12rem auto;
-    h1 {
-      font-size: 2.5rem;
-      padding: 0 2rem 4rem;
-      font-family: $michroma;
-      letter-spacing: 1px;
-    }
+  h1 {
+    font-size: 2.5rem;
+    padding: 0 4rem 4rem;
+    font-family: $michroma;
+    letter-spacing: 1px;
   }
 }

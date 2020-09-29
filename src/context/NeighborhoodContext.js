@@ -1,12 +1,12 @@
 import React, { useState, createContext } from 'react';
-import img1 from '../images/neighborhoods/canal.jpg';
-import img2 from '../images/neighborhoods/south_beach.jpg';
-import img3 from '../images/neighborhoods/brickell.jpg';
-import img4 from '../images/neighborhoods/design_district.jpg';
-import img5 from '../images/neighborhoods/downtown.jpg';
-import img6 from '../images/neighborhoods/wynwood.jpg';
-import img7 from '../images/neighborhoods/midtown.jpg';
-import img8 from '../images/neighborhoods/coral_gables.jpg';
+import img1 from '../images/neighborhoods/canal.webp';
+import img2 from '../images/neighborhoods/south_beach.webp';
+import img3 from '../images/neighborhoods/brickell.webp';
+import img4 from '../images/neighborhoods/design_district.webp';
+import img5 from '../images/neighborhoods/downtown.webp';
+import img6 from '../images/neighborhoods/wynwood.webp';
+import img7 from '../images/neighborhoods/midtown.webp';
+import img8 from '../images/neighborhoods/coral_gables.webp';
 
 export const NeighborhoodContext = createContext();
 

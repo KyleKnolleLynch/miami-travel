@@ -11,22 +11,9 @@ $yellow-color: rgba(255, 238, 0, 0.827);
 $thumbBG: #888;
 $scrollbarBG: #eee;
 
-:root,
-body {
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-
 body,
 html {
-  width: 100vw;
-  background: $dark-color;
-  color: $white-color;
-  font-family: $quicksand;
   font-size: 10px;
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: $thumbBG $scrollbarBG;
   text-rendering: optimizeLegibility;
   text-rendering: geometricPrecision;
   font-smooth: always;
@@ -35,6 +22,17 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -webkit-font-smoothing: subpixel-antialiased;
+}
+
+body {
+  // width: 100vw;
+  background: $dark-color;
+  color: $white-color;
+  font-family: $quicksand;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: $thumbBG $scrollbarBG;
+  overflow-y: scroll;
 }
 
 body::-webkit-scrollbar {

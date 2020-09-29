@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 import { NeighborhoodContext } from '../../context/NeighborhoodContext';
 import Header from '../layout/header/Header';
-import imgHero from '../../images/neighborhoods/neighborhood-hero.jpg';
-import imgHeroSm from '../../images/neighborhoods/neighborhood-hero-small.jpg';
+import imgHero from '../../images/neighborhoods/neighborhood-hero.webp';
+import imgHeroSm from '../../images/neighborhoods/neighborhood-hero-small.webp';
 import TitleTag from '../utils/TitleTag';
 import Footer from '../layout/footer/Footer';
 import ReturnTop from '../utils/ReturnTop';
@@ -22,7 +22,7 @@ const pageVariants = {
     },
   },
   exit: {
-    x: '100vw',
+    x: '-100vw',
     transition: { ease: 'easeInOut' },
   },
 };

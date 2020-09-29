@@ -1,12 +1,37 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import Header from '../layout/header/Header';
 import Section6 from '../sections/Section6';
 import Footer from '../layout/footer/Footer';
-import imgHero from '../../images/livecams-hero.jpg';
+import imgHero from '../../images/livecams-hero.webp';
+
+const pageVariants = {
+  hidden: {
+    opacity: 0,
+    x: '100vw',
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: 'tween',
+      duration: 0.5,
+    },
+  },
+  exit: {
+    x: '-100vw',
+    transition: { ease: 'easeInOut' },
+  },
+};
 
 const Livecams = () => {
   return (
-    <div>
+    <motion.div
+      variants={pageVariants}
+      initial='hidden'
+      animate='visible'
+      exit='exit'
+    >
       <Header />
       <section id='livecams-section-1'>
         <img
@@ -31,12 +56,10 @@ const Livecams = () => {
       </article>
       <Section6 />
       <section id='livecams-section-2'>
-        <div className='livecams-container'>
-          <h1>Coral City Underwater Webcam</h1>
+        <h1>Coral City Underwater Webcam</h1>
+        <div className='iframe-container'>
           <iframe
             title='Coral City Underwater Webcam'
-            width='1330'
-            height='750'
             src='https://www.youtube.com/embed/7i8ARjIeM2k?autoplay=1'
             frameBorder='0'
             allow='accelerometer; fullscreen; autoplay; encrypted-media; gyroscope; picture-in-picture'
@@ -46,7 +69,7 @@ const Livecams = () => {
         </div>
       </section>
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

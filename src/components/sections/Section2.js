@@ -29,7 +29,7 @@ const Section2 = () => {
         </div>
         <div className='s2-content'>
           <h1>Welcome To Miami</h1>
-          <h4>Stay, Relax</h4>
+          <h2>Stay, Relax</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
             impedit error deserunt velit in.

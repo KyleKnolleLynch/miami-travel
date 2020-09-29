@@ -1,5 +1,5 @@
 header {
-  width: 100vw;
+  width: 100%;
   //  banner
   .header-banner {
     display: flex;
@@ -20,6 +20,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 2rem 4rem;
+    position: relative;
     .header-brand-div {
       display: grid;
       grid-template-columns: 22rem 1fr 1fr;
@@ -72,6 +73,7 @@ header {
           transition: transform 500ms ease;
         }
         .burgerBar3 {
+          opacity: 1;
           transform: translateY(0.8rem);
           transition: opacity 200ms ease 300ms;
         }
@@ -92,7 +94,7 @@ header {
     //  nav menu
     ul {
       position: absolute;
-      top: 7rem;
+      top: 0;
       right: 0;
       background: linear-gradient(
         to top left,
@@ -111,11 +113,16 @@ header {
           background: transparent;
           border: none;
           border-bottom: 1px solid $white-color;
-          width: 75%;
+          width: 73%;
           font-size: 3rem;
           color: $white-color;
           outline: 0;
           margin-left: 3rem;
+        }
+        label {
+          display: block;
+          margin-left: 3rem;
+          font-size: 1.5rem;
         }
       }
     }
@@ -123,10 +130,10 @@ header {
   //  nav overlay
   nav:before {
     content: '';
-    width: 100vw;
+    width: 100%;
     height: 12rem;
     position: absolute;
-    top: 7rem;
+    top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.5);
     z-index: 1;
