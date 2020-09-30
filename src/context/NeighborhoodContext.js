@@ -12,14 +12,62 @@ export const NeighborhoodContext = createContext();
 
 const NeighborhoodContextProvider = (props) => {
   const [neighborhoods] = useState([
-    { title: 'Edgewater', img: img1, id: 1 },
-    { title: 'South Beach', img: img2, id: 2 },
-    { title: 'Brickell', img: img3, id: 3 },
-    { title: 'Design District', img: img4, id: 4 },
-    { title: 'Downtown', img: img5, id: 5 },
-    { title: 'Wynwood', img: img6, id: 6 },
-    { title: 'Midtown', img: img7, id: 7 },
-    { title: 'Coral Gables', img: img8, id: 8 },
+    {
+      title: 'Edgewater',
+      desc:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione minima dolorum ipsam cupiditate at, ab possimus quasi nulla qui sapiente, officia, rem iste asperiores nisi! Fuga voluptas tenetur, numquam mollitia dolorum magnam ducimus porro, perferendis saepe quos facilis obcaecati corporis.',
+      img: img1,
+      id: 1,
+    },
+    {
+      title: 'South Beach',
+      desc:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione minima dolorum ipsam cupiditate at, ab possimus quasi nulla qui sapiente, officia, rem iste asperiores nisi! Fuga voluptas tenetur, numquam mollitia dolorum magnam ducimus porro, perferendis saepe quos facilis obcaecati corporis.',
+      img: img2,
+      id: 2,
+    },
+    {
+      title: 'Brickell',
+      desc:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione minima dolorum ipsam cupiditate at, ab possimus quasi nulla qui sapiente, officia, rem iste asperiores nisi! Fuga voluptas tenetur, numquam mollitia dolorum magnam ducimus porro, perferendis saepe quos facilis obcaecati corporis.',
+      img: img3,
+      id: 3,
+    },
+    {
+      title: 'Design District',
+      desc:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione minima dolorum ipsam cupiditate at, ab possimus quasi nulla qui sapiente, officia, rem iste asperiores nisi! Fuga voluptas tenetur, numquam mollitia dolorum magnam ducimus porro, perferendis saepe quos facilis obcaecati corporis.',
+      img: img4,
+      id: 4,
+    },
+    {
+      title: 'Downtown',
+      desc:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione minima dolorum ipsam cupiditate at, ab possimus quasi nulla qui sapiente, officia, rem iste asperiores nisi! Fuga voluptas tenetur, numquam mollitia dolorum magnam ducimus porro, perferendis saepe quos facilis obcaecati corporis.',
+      img: img5,
+      id: 5,
+    },
+    {
+      title: 'Wynwood',
+      desc:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione minima dolorum ipsam cupiditate at, ab possimus quasi nulla qui sapiente, officia, rem iste asperiores nisi! Fuga voluptas tenetur, numquam mollitia dolorum magnam ducimus porro, perferendis saepe quos facilis obcaecati corporis.',
+      img: img6,
+      id: 6,
+    },
+    {
+      title: 'Midtown',
+      desc:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione minima dolorum ipsam cupiditate at, ab possimus quasi nulla qui sapiente, officia, rem iste asperiores nisi! Fuga voluptas tenetur, numquam mollitia dolorum magnam ducimus porro, perferendis saepe quos facilis obcaecati corporis.',
+      img: img7,
+      id: 7,
+    },
+    {
+      title: 'Coral Gables',
+      desc:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione minima dolorum ipsam cupiditate at, ab possimus quasi nulla qui sapiente, officia, rem iste asperiores nisi! Fuga voluptas tenetur, numquam mollitia dolorum magnam ducimus porro, perferendis saepe quos facilis obcaecati corporis.',
+      img: img8,
+      id: 8,
+    },
   ]);
   return (
     <NeighborhoodContext.Provider value={{ neighborhoods }}>

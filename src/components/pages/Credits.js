@@ -57,7 +57,6 @@ const Credits = () => {
               <span>Live weather data provided by: </span>
               <a href='https://openweathermap.org'>OpenWeather</a>
             </li>
-            {/*  todo  add google maps for map link  */}
           </ul>
           <p>
             All material and links contained in this website are for learning

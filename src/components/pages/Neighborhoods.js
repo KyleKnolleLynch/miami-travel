@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { motion } from 'framer-motion';
 import { NeighborhoodContext } from '../../context/NeighborhoodContext';
 import Header from '../layout/header/Header';
@@ -7,6 +7,8 @@ import imgHeroSm from '../../images/neighborhoods/neighborhood-hero-small.webp';
 import TitleTag from '../utils/TitleTag';
 import Footer from '../layout/footer/Footer';
 import ReturnTop from '../utils/ReturnTop';
+import Modal from '../utils/Modal';
+import ModalContent from '../utils/ModalContent';
 
 const pageVariants = {
   hidden: {
@@ -29,6 +31,24 @@ const pageVariants = {
 
 const Neighborhoods = () => {
   const { neighborhoods } = useContext(NeighborhoodContext);
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalDetails, setModalDetails] = useState({
+    title: '',
+    desc: '',
+    img: '',
+  });
+
+  const setModalData = (hood) => {
+    setModalOpen(true);
+    const res = neighborhoods.filter((item) => hood.id === item.id);
+    const { title, desc, img } = res[0];
+    setModalDetails({
+      title,
+      desc,
+      img,
+    });
+  };
 
   return (
     <motion.div
@@ -79,8 +99,19 @@ const Neighborhoods = () => {
           bgColor='rgb(0, 174, 255)'
         />
         <div className='neighborhood-grid'>
+          <Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>
+            <ModalContent
+              title={modalDetails.title}
+              desc={modalDetails.desc}
+              img={modalDetails.img}
+            />
+          </Modal>
           {neighborhoods.map((neighborhood) => (
-            <div key={neighborhood.id} className='neighborhood-card'>
+            <div
+              key={neighborhood.id}
+              className='neighborhood-card'
+              onClick={() => setModalData(neighborhood)}
+            >
               <img
                 src={neighborhood.img}
                 alt='selected_neighborhoods'
