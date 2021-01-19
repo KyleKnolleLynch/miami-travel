@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const ModalContent = ({ title, desc, img }) => {
   return (
@@ -7,7 +7,7 @@ const ModalContent = ({ title, desc, img }) => {
       <p>{desc}</p>
       <img src={img} alt='neighborhood modal desc' />
     </div>
-  );
-};
+  )
+}
 
-export default ModalContent;
+export default ModalContent

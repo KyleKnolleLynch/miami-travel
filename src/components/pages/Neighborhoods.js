@@ -1,14 +1,14 @@
-import React, { useContext, useState } from 'react';
-import { motion } from 'framer-motion';
-import { NeighborhoodContext } from '../../context/NeighborhoodContext';
-import Header from '../layout/header/Header';
-import imgHero from '../../images/neighborhoods/neighborhood-hero.webp';
-import imgHeroSm from '../../images/neighborhoods/neighborhood-hero-small.webp';
-import TitleTag from '../utils/TitleTag';
-import Footer from '../layout/footer/Footer';
-import ReturnTop from '../utils/ReturnTop';
-import Modal from '../utils/Modal';
-import ModalContent from '../utils/ModalContent';
+import React, { useContext, useState } from 'react'
+import { motion } from 'framer-motion'
+import { NeighborhoodContext } from '../../context/NeighborhoodContext'
+import Header from '../layout/header/Header'
+import imgHero from '../../images/neighborhoods/neighborhood-hero.webp'
+import imgHeroSm from '../../images/neighborhoods/neighborhood-hero-small.webp'
+import TitleTag from '../utils/TitleTag'
+import Footer from '../layout/footer/Footer'
+import ReturnTop from '../utils/ReturnTop'
+import Modal from '../utils/Modal'
+import ModalContent from '../utils/ModalContent'
 
 const pageVariants = {
   hidden: {
@@ -27,28 +27,28 @@ const pageVariants = {
     x: '-100vw',
     transition: { ease: 'easeInOut' },
   },
-};
+}
 
 const Neighborhoods = () => {
-  const { neighborhoods } = useContext(NeighborhoodContext);
+  const { neighborhoods } = useContext(NeighborhoodContext)
 
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false)
   const [modalDetails, setModalDetails] = useState({
     title: '',
     desc: '',
     img: '',
-  });
+  })
 
-  const setModalData = (hood) => {
-    setModalOpen(true);
-    const res = neighborhoods.filter((item) => hood.id === item.id);
-    const { title, desc, img } = res[0];
+  const setModalData = hood => {
+    setModalOpen(true)
+    const res = neighborhoods.filter(item => hood.id === item.id)
+    const { title, desc, img } = res[0]
     setModalDetails({
       title,
       desc,
       img,
-    });
-  };
+    })
+  }
 
   return (
     <motion.div
@@ -106,7 +106,7 @@ const Neighborhoods = () => {
               img={modalDetails.img}
             />
           </Modal>
-          {neighborhoods.map((neighborhood) => (
+          {neighborhoods.map(neighborhood => (
             <div
               key={neighborhood.id}
               className='neighborhood-card'
@@ -126,7 +126,7 @@ const Neighborhoods = () => {
       <Footer />
       <ReturnTop />
     </motion.div>
-  );
-};
+  )
+}
 
-export default Neighborhoods;
+export default Neighborhoods

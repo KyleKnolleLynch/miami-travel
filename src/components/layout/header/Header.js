@@ -1,71 +1,66 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 // import { Link } from 'react-scroll';
-import palmSvg from '../../../images/icons/palm.svg';
-import searchSvg from '../../../images/icons/search.svg';
+import palmSvg from '../../../images/icons/palm.svg'
+import searchSvg from '../../../images/icons/search.svg'
 
 const Header = () => {
-  const [open, setOpen] = useState(false);
-  const [menuStyle, setMenuStyle] = useState('');
-  const [burger1Style, setBurger1Style] = useState({});
-  const [burger2Style, setBurger2Style] = useState({});
-  const [burger3Style, setBurger3Style] = useState(null);
-  const [burgerTitle, setBurgerTitle] = useState(null);
-  const [menuSearcherStyle, setMenuSearcherStyle] = useState('');
-  const [menuInputVal, setMenuInputVal] = useState('');
+  const [open, setOpen] = useState(false)
+  const [menuStyle, setMenuStyle] = useState('')
+  const [burger1Style, setBurger1Style] = useState({})
+  const [burger2Style, setBurger2Style] = useState({})
+  const [burger3Style, setBurger3Style] = useState(null)
+  const [burgerTitle, setBurgerTitle] = useState(null)
+  const [menuSearcherStyle, setMenuSearcherStyle] = useState('')
+  const [menuInputVal, setMenuInputVal] = useState('')
 
   useEffect(() => {
     if (!open) {
       //  closed nav menu state
-      setMenuStyle('translate(15rem, -25rem) scale(0)');
-      setBurger1Style({ translateY: '1rem', rotate: '0deg' });
-      setBurger2Style({ translateY: '0.9rem', rotate: '0deg' });
-      setBurger3Style(1);
-      setBurgerTitle(1);
-      setMenuSearcherStyle('translateX(0)');
+      setMenuStyle('translate(15rem, -25rem) scale(0)')
+      setBurger1Style({ translateY: '1rem', rotate: '0deg' })
+      setBurger2Style({ translateY: '0.9rem', rotate: '0deg' })
+      setBurger3Style(1)
+      setBurgerTitle(1)
+      setMenuSearcherStyle('translateX(0)')
 
       //  close animation delay
       const delayClose = () => {
-        setBurger1Style((prev) => ({ ...prev, translateY: '-0.8rem' }));
-        setBurger2Style((prev) => ({ ...prev, translateY: '0' }));
-      };
+        setBurger1Style(prev => ({ ...prev, translateY: '-0.8rem' }))
+        setBurger2Style(prev => ({ ...prev, translateY: '0' }))
+      }
 
-      setTimeout(() => delayClose(), 500);
-      setTimeout(() => setMenuInputVal(''), 600);
+      setTimeout(() => delayClose(), 500)
+      setTimeout(() => setMenuInputVal(''), 600)
     } else {
       //  opened nav menu state
-      setMenuStyle('translate(0, 0) scale(1)');
-      setBurger1Style({ translateY: '1rem', rotate: '0deg' });
-      setBurger2Style({ translateY: '0.9rem', rotate: '0deg' });
-      setBurger3Style(0);
-      setBurgerTitle(0);
-      setMenuSearcherStyle('translateX(-28rem)');
+      setMenuStyle('translate(0, 0) scale(1)')
+      setBurger1Style({ translateY: '1rem', rotate: '0deg' })
+      setBurger2Style({ translateY: '0.9rem', rotate: '0deg' })
+      setBurger3Style(0)
+      setBurgerTitle(0)
+      setMenuSearcherStyle('translateX(-28rem)')
 
       //  open animation delay
       const delayOpen = () => {
-        setBurger1Style({ translateY: '0', rotate: '-135deg' });
-        setBurger2Style({ translateY: '0', rotate: '-45deg' });
-      };
-      setTimeout(() => delayOpen(), 500);
+        setBurger1Style({ translateY: '0', rotate: '-135deg' })
+        setBurger2Style({ translateY: '0', rotate: '-45deg' })
+      }
+      setTimeout(() => delayOpen(), 500)
     }
-  }, [open]);
+  }, [open])
 
   const focusSearcher = () => {
-    setOpen(true);
-    document.querySelector('.menu-input').focus();
-  };
+    setOpen(true)
+    document.querySelector('.menu-input').focus()
+  }
 
   return (
     <header id='header'>
       <div className='header-banner'>
         <Link to='/'>
           <div className='header-logo'>
-            <img
-              src={palmSvg}
-              alt='palm_icon'
-              loading='lazy'
-              style={{ width: '60px', height: '60px' }}
-            />
+            <img src={palmSvg} alt='palm_icon' loading='lazy' />
           </div>
         </Link>
         <Link to='/'>
@@ -117,6 +112,7 @@ const Header = () => {
             <p className='burger-title' style={{ opacity: burgerTitle }}>
               MENU
             </p>
+            <p className='offscreen'>Menu</p>
           </button>
         </div>
         <ul style={{ transform: menuStyle }}>
@@ -126,7 +122,7 @@ const Header = () => {
               id='searchbar'
               className='menu-input'
               value={menuInputVal}
-              onChange={(e) => setMenuInputVal(e.target.value)}
+              onChange={e => setMenuInputVal(e.target.value)}
             />
             <label htmlFor='searchbar'>search</label>
           </li>
@@ -149,12 +145,14 @@ const Header = () => {
             <a href='/#footer'>Travel Info</a>
           </li>
           <li>
-            <Link to='/credits' href='#footer'>Credits</Link>
+            <Link to='/credits' href='#footer'>
+              Credits
+            </Link>
           </li>
         </ul>
       </nav>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

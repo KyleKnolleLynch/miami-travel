@@ -1,17 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import Header from '../layout/header/Header';
-import HeaderSlider from '../layout/header/HeaderSlider';
-import { HeaderData } from '../../data/headerData';
-import Divider from '../utils/Divider';
-import Section1 from '../sections/Section1';
-import Section2 from '../sections/Section2';
-import Section3 from '../sections/Section3';
-import Section4 from '../sections/Section4';
-import Section5 from '../sections/Section5';
-import Section6 from '../sections/Section6';
-import Footer from '../layout/footer/Footer';
-import ReturnTop from '../utils/ReturnTop';
+import React, { lazy, Suspense } from 'react'
+import { motion } from 'framer-motion'
+import Header from '../layout/header/Header'
+import HeaderSlider from '../layout/header/HeaderSlider'
+import { HeaderData } from '../../data/headerData'
+import Loader from '../utils/Loader'
+import Divider from '../utils/Divider'
+// import Section1 from '../sections/Section1'
+// import Section2 from '../sections/Section2'
+// import Section3 from '../sections/Section3'
+// import Section4 from '../sections/Section4'
+// import Section5 from '../sections/Section5'
+// import Section6 from '../sections/Section6'
+import Footer from '../layout/footer/Footer'
+import ReturnTop from '../utils/ReturnTop'
+
+const Section1 = lazy(() => import('../sections/Section1'))
+const Section2 = lazy(() => import('../sections/Section2'))
+const Section3 = lazy(() => import('../sections/Section3'))
+const Section4 = lazy(() => import('../sections/Section4'))
+const Section5 = lazy(() => import('../sections/Section5'))
+const Section6 = lazy(() => import('../sections/Section6'))
 
 const pageVariants = {
   hidden: {
@@ -30,37 +38,34 @@ const pageVariants = {
     x: '-100vw',
     transition: { ease: 'easeInOut' },
   },
-};
+}
 
 const Home = () => {
-  const [dividerWidth, setDividerWidth] = useState(1);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const newWidth = window.scrollY / window.innerHeight + 1;
-      setDividerWidth(newWidth);
-    };
-    document.addEventListener('scroll', handleScroll, { passive: true });
-    return () => document.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <motion.div id='home' variants={pageVariants} initial='hidden' animate='visible' exit='exit'>
+    <motion.div
+      id='home'
+      variants={pageVariants}
+      initial='hidden'
+      animate='visible'
+      exit='exit'
+    >
       <Header />
       <HeaderSlider slides={HeaderData} autoPlay={5} />
-      <Divider width={dividerWidth} />
+      <Divider />
       <main>
-        <Section1 />
-        <Section2 />
-        <Section3 />
-        <Section4 />
-        <Section5 />
-        <Section6 />
+        <Suspense fallback={<Loader />}>
+          <Section1 />
+          <Section2 />
+          <Section3 />
+          <Section4 />
+          <Section5 />
+          <Section6 />
+        </Suspense>
       </main>
       <Footer />
       <ReturnTop />
     </motion.div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

@@ -1,25 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import TitleTag from '../utils/TitleTag';
-import VideoModal from '../utils/VideoModal';
-import video1 from '../../images/videos/marathon_480.m4v';
-import video2 from '../../images/videos/fireworks_480.m4v';
-import img1 from '../../images/marathon_photo.webp';
-import img2 from '../../images/fireworks_photo.webp';
-import Divider from '../utils/Divider';
+import React, { useState } from 'react'
+import TitleTag from '../utils/TitleTag'
+import VideoModal from '../utils/VideoModal'
+import video1 from '../../images/videos/marathon_480.m4v'
+import video2 from '../../images/videos/fireworks_480.m4v'
+import img1 from '../../images/marathon_photo.webp'
+import img2 from '../../images/fireworks_photo.webp'
+import Divider from '../utils/Divider'
 
 const Section3 = () => {
-  const [modal1Open, setModal1Open] = useState(false);
-  const [modal2Open, setModal2Open] = useState(false);
-  const [dividerWidth, setDividerWidth] = useState(1);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const newWidth = window.scrollY / window.innerHeight / 2.2;
-      setDividerWidth(newWidth);
-    };
-    document.addEventListener('scroll', handleScroll, { passive: true });
-    return () => document.removeEventListener('scroll', handleScroll);
-  }, []);
+  const [modal1Open, setModal1Open] = useState(false)
+  const [modal2Open, setModal2Open] = useState(false)
 
   return (
     <>
@@ -83,9 +73,9 @@ const Section3 = () => {
           </div>
         </div>
       </section>
-      <Divider width={dividerWidth} />
+      <Divider />
     </>
-  );
-};
+  )
+}
 
-export default Section3;
+export default Section3

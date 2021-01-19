@@ -1,17 +1,16 @@
-import React, { useState, useRef, useEffect } from 'react';
-import img1 from '../../images/busTours.webp';
-import img2 from '../../images/hot-eats.webp';
-import img3 from '../../images/dj.webp';
-import img4 from '../../images/alligator.webp';
-import HotBox from '../utils/HotBox';
-import Divider from '../utils/Divider';
-import TitleTag from '../utils/TitleTag';
+import React, { useState, useRef, useEffect } from 'react'
+import img1 from '../../images/busTours.webp'
+import img2 from '../../images/hot-eats.webp'
+import img3 from '../../images/dj.webp'
+import img4 from '../../images/alligator.webp'
+import HotBox from '../utils/HotBox'
+import Divider from '../utils/Divider'
+import TitleTag from '../utils/TitleTag'
 
 const Section1 = () => {
-  const [dividerWidth, setDividerWidth] = useState(1);
-  const ref = useRef();
-  const [opacity, setOpacity] = useState(0);
-  const [node, setNode] = useState(null);
+  const ref = useRef()
+  const [opacity, setOpacity] = useState(0)
+  const [node, setNode] = useState(null)
   const [state] = useState([
     {
       title: 'Double Decker Tours',
@@ -37,34 +36,25 @@ const Section1 = () => {
       img: img4,
       link: 'https://www.zoomiami.org/',
     },
-  ]);
+  ])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        entry.isIntersecting ? setOpacity(0.6) : setOpacity(0);
+        entry.isIntersecting ? setOpacity(0.6) : setOpacity(0)
       },
       {
         root: null,
         rootMargin: '500px 0px 0px 0px',
         threshold: 0.7,
       }
-    );
-    setNode(ref.current);
+    )
+    setNode(ref.current)
     if (node) {
-      observer.observe(node);
-      return () => observer.unobserve(node);
+      observer.observe(node)
+      return () => observer.unobserve(node)
     }
-  }, [node]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const newWidth = window.scrollY / window.innerHeight;
-      setDividerWidth(newWidth);
-    };
-    document.addEventListener('scroll', handleScroll, { passive: true });
-    return () => document.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [node])
 
   return (
     <>
@@ -88,9 +78,9 @@ const Section1 = () => {
           </div>
         </div>
       </section>
-      <Divider width={dividerWidth} />
+      <Divider />
     </>
-  );
-};
+  )
+}
 
-export default Section1;
+export default Section1

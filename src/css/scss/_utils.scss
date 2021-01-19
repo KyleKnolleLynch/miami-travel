@@ -40,6 +40,7 @@ i {
 
 main,
 section {
+  width: 100vw;
   position: relative;
 }
 
@@ -177,6 +178,7 @@ section {
     left: 0;
     right: 0;
     bottom: -0.75rem;
+    transition: transform 500ms linear;
   }
 }
 
@@ -270,4 +272,71 @@ section {
       margin-left: auto;
     }
   }
+}
+
+//  Loader
+.loading-div {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgb(0, 174, 255);
+
+  .wave {
+    border-radius: 50%;
+    position: relative;
+    opacity: 1;
+    img {
+      width: 55px;
+      height: 55px;
+    }
+  }
+  .wave:before,
+  .wave:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .wave:before {
+    transform: scale(0.5);
+    opacity: 0;
+    animation: waveBf 1s infinite linear;
+  }
+  .wave:after {
+    transform: scale(1.6);
+    opacity: 1;
+    animation: waveAf 1s infinite linear;
+  }
+}
+
+@keyframes waveBf {
+  from {
+    transform: scale(1);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1.6);
+    opacity: 1;
+  }
+}
+@keyframes waveAf {
+  from {
+    transform: scale(1.6);
+    opacity: 1;
+  }
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+// hidden offscreen
+.offscreen {
+  transform: translateX(-10000px);
 }

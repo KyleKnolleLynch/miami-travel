@@ -1,5 +1,5 @@
-import React from 'react';
-import closeSvg from '../../images/icons/x-square.svg';
+import React from 'react'
+import closeSvg from '../../images/icons/x-square.svg'
 
 const VideoModal = ({ source, title, name, closeModal }) => {
   return (
@@ -22,7 +22,7 @@ const VideoModal = ({ source, title, name, closeModal }) => {
         ></video>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default VideoModal;
+export default VideoModal

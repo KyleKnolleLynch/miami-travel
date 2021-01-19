@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import TitleTag from '../utils/TitleTag';
-import Divider from '../utils/Divider';
-import img1 from '../../images/plane_art.webp';
-import img2 from '../../images/wall_art.webp';
+import React from 'react'
+import { motion } from 'framer-motion'
+import TitleTag from '../utils/TitleTag'
+import Divider from '../utils/Divider'
+import img1 from '../../images/plane_art.webp'
+import img2 from '../../images/wall_art.webp'
 
 const fluidVariants1 = {
   hover: { scale: 1.2, cursor: 'pointer' },
@@ -16,20 +16,9 @@ const fluidVariants1 = {
       duration: 0.5,
     },
   },
-};
+}
 
 const Section5 = () => {
-  const [dividerWidth, setDividerWidth] = useState(1);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const newWidth = window.scrollY / window.innerHeight / 3.2;
-      setDividerWidth(newWidth);
-    };
-    document.addEventListener('scroll', handleScroll, { passive: true });
-    return () => document.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <>
       <section id='section5'>
@@ -65,9 +54,9 @@ const Section5 = () => {
           </div>
         </div>
       </section>
-      <Divider width={dividerWidth} />
+      <Divider />
     </>
-  );
-};
+  )
+}
 
-export default Section5;
+export default Section5

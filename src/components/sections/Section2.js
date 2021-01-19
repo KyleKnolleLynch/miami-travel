@@ -1,19 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import video1 from '../../images/videos/walking.m4v';
-import Divider from '../utils/Divider';
+import React from 'react'
+import video1 from '../../images/videos/walking.m4v'
+import Divider from '../utils/Divider'
 
 const Section2 = () => {
-  const [dividerWidth, setDividerWidth] = useState(1);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const newWidth = window.scrollY / window.innerHeight / 1.55;
-      setDividerWidth(newWidth);
-    };
-    document.addEventListener('scroll', handleScroll, { passive: true });
-    return () => document.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <>
       <section id='section2'>
@@ -36,9 +25,9 @@ const Section2 = () => {
           </p>
         </div>
       </section>
-      <Divider width={dividerWidth} />
+      <Divider />
     </>
-  );
-};
+  )
+}
 
-export default Section2;
+export default Section2

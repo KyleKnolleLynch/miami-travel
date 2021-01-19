@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import Header from '../layout/header/Header';
+import React from 'react'
+import { motion } from 'framer-motion'
+import Header from '../layout/header/Header'
 
 const pageVariants = {
   hidden: {
@@ -19,7 +19,7 @@ const pageVariants = {
     x: '-100vw',
     transition: { ease: 'easeInOut' },
   },
-};
+}
 
 const Credits = () => {
   return (
@@ -36,26 +36,61 @@ const Credits = () => {
           <ul>
             <li>
               <span>All photos provided by: </span>
-              <a href='https://unsplash.com/'>Unsplash</a>
+              <a
+                href='https://unsplash.com/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                Unsplash
+              </a>
             </li>
             <li>
               <span>Video files provided by: </span>
-              <a href='https://www.videvo.net/'>Videvo</a>
+              <a
+                href='https://www.videvo.net/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                Videvo
+              </a>
             </li>
             <li>
               <span>Livecams provided by: </span>
-              <a href='https://windy.com'>Windy.com</a>
+              <a
+                href='https://windy.com'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                Windy.com
+              </a>
             </li>
             <li>
               <span>Coral City Camera provided by: </span>
-              <a href='https://www.youtube.com/user/CoralMorphologic'>
+              <a
+                href='https://www.youtube.com/user/CoralMorphologic'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 Coral Morphologic
               </a>{' '}
-              and <a href='https://youtube.com'>YouTube</a>
+              and{' '}
+              <a
+                href='https://youtube.com'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                YouTube
+              </a>
             </li>
             <li>
               <span>Live weather data provided by: </span>
-              <a href='https://openweathermap.org'>OpenWeather</a>
+              <a
+                href='https://openweathermap.org'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                OpenWeather
+              </a>
             </li>
           </ul>
           <p>
@@ -69,7 +104,7 @@ const Credits = () => {
         </article>
       </section>
     </motion.div>
-  );
-};
+  )
+}
 
-export default Credits;
+export default Credits

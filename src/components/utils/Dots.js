@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const Dot = ({ active }) => {
   return (
@@ -6,8 +6,8 @@ const Dot = ({ active }) => {
       className='dot'
       style={{ transform: `${active ? 'scale(1.5)' : 'scale(1)'}` }}
     />
-  );
-};
+  )
+}
 
 const Dots = ({ slides, activeIndex }) => {
   return (
@@ -16,7 +16,7 @@ const Dots = ({ slides, activeIndex }) => {
         <Dot key={slide.id} active={activeIndex === i} />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Dots;
+export default Dots

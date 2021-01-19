@@ -1,9 +1,9 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import Header from '../layout/header/Header';
-import Section6 from '../sections/Section6';
-import Footer from '../layout/footer/Footer';
-import imgHero from '../../images/livecams-hero.webp';
+import React from 'react'
+import { motion } from 'framer-motion'
+import Header from '../layout/header/Header'
+import Section6 from '../sections/Section6'
+import Footer from '../layout/footer/Footer'
+import imgHero from '../../images/livecams-hero.webp'
 
 const pageVariants = {
   hidden: {
@@ -22,7 +22,7 @@ const pageVariants = {
     x: '-100vw',
     transition: { ease: 'easeInOut' },
   },
-};
+}
 
 const Livecams = () => {
   return (
@@ -70,7 +70,7 @@ const Livecams = () => {
       </section>
       <Footer />
     </motion.div>
-  );
-};
+  )
+}
 
-export default Livecams;
+export default Livecams

@@ -16,6 +16,20 @@
     font-size: 1.3rem;
   }
 
+  .header-slider .header-slide > .header-slide-box {
+    padding: 2.2rem;
+    h1 {
+      margin-bottom: 0.5rem;
+      font-size: 4.5rem;
+      letter-spacing: 0.2rem;
+    }
+  }
+
+  //  divider
+  .divider-wrapper {
+    display: none;
+  }
+
   //  sections
   #section1 .grid-hot {
     grid-template-columns: 1fr;
@@ -143,13 +157,20 @@
 }
 
 @include mediaSm {
-  //  divider
-  .divider-wrapper {
-    opacity: 0;
-  }
-
   //  header
   header {
+    .header-banner {
+      padding: 0.8rem 2rem;
+      .header-logo {
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .header-title > h1 {
+        margin-left: 1.5rem;
+      }
+    }
     nav {
       padding: 2rem 1.2rem;
       .header-brand-div {
@@ -202,10 +223,10 @@
 
   //  header slider
   .header-slider {
-    .header-slide-box {
-      display: block;
-      margin-top: 12.1rem;
-      padding: 2.5rem;
+    height: calc(100vh - 3rem);
+    .header-slide > .header-slide-box {
+      top: 22vh;
+      padding: 2rem;
       h1 {
         font-size: 3rem;
       }
@@ -233,10 +254,10 @@
     transform: scale(0.8);
   }
   .dots {
-    bottom: 6rem;
+    bottom: 7.5rem;
   }
   .arrow-div {
-    bottom: 5.5rem;
+    bottom: 6.5rem;
   }
 
   //  title tag
@@ -364,5 +385,5 @@
       font-size: 1.3rem;
       text-align: center;
     }
-  } 
+  }
 }

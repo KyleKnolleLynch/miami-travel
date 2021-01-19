@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const HotBox = ({ content: { title, desc, img, link } }) => {
   return (
@@ -8,7 +8,12 @@ const HotBox = ({ content: { title, desc, img, link } }) => {
           <h2>{title}</h2>
           <p>{desc}</p>
         </div>
-        <a href={link} className='btn'>
+        <a
+          href={link}
+          target='_blank'
+          rel='noopener noreferrer'
+          className='btn'
+        >
           Visit Now
         </a>
       </div>
@@ -21,7 +26,7 @@ const HotBox = ({ content: { title, desc, img, link } }) => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default HotBox;
+export default HotBox

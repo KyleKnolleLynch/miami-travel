@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const Arrows = ({ leftClick, rightClick }) => {
   return (
@@ -6,7 +6,7 @@ const Arrows = ({ leftClick, rightClick }) => {
       <i className='las la-angle-left la-3x' onClick={leftClick} />
       <i className='las la-angle-right la-3x' onClick={rightClick} />
     </div>
-  );
-};
+  )
+}
 
-export default Arrows;
+export default Arrows

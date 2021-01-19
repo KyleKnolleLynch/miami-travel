@@ -1,32 +1,36 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 
 const Weather = () => {
   const [weather, setWeather] = useState({
     temp: 0,
     rain: 0,
-  });
+  })
 
   const getWeather = async () => {
-    const res = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=Miami,us&units=imperial&appid=${process.env.REACT_APP_WEATHER_KEY}`
-    );
+    try {
+      const res = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=Miami,us&units=imperial&appid=${process.env.REACT_APP_WEATHER_KEY}`
+      )
 
-    const resData = await res.json();
-    const curTemp = resData.main.temp.toFixed(0);
+      const resData = await res.json()
+      const curTemp = resData.main.temp.toFixed(0)
 
-    let curRain;
-    if (resData.rain === undefined) {
-      curRain = 0;
-    } else {
-      curRain = resData.rain['1h'].toFixed(1);
+      let curRain
+      if (resData.rain === undefined) {
+        curRain = 0
+      } else {
+        curRain = resData.rain['1h'].toFixed(1)
+      }
+
+      setWeather({ temp: curTemp, rain: curRain })
+    } catch (err) {
+      console.log(err.message)
     }
-
-    setWeather({ temp: curTemp, rain: curRain });
-  };
+  }
 
   useEffect(() => {
-    getWeather();
-  }, []);
+    getWeather()
+  }, [])
 
   return (
     <div className='weather-div'>
@@ -40,7 +44,7 @@ const Weather = () => {
         <span>In.</span>
       </p>
     </div>
-  );
-};
+  )
+}
 
-export default Weather;
+export default Weather
