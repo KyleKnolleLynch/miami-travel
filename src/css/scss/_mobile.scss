@@ -1,5 +1,5 @@
 @include mediaLg {
-  #neighborhoods > .neighborhoods-display > .neighborhood-grid {
+  .neighborhoods > .neighborhoods-display > .neighborhood-grid {
     gap: 2rem;
   }
   footer > .footer-container {
@@ -142,16 +142,16 @@
   }
 
   //  neighborhoods page
-  #neighborhoods > .neighborhoods-hero > h1 {
+  .neighborhoods > .neighborhoods-hero > h1 {
     font-size: 4.5rem;
   }
 
   //  livecams page
-  #livecams-section-1 > h1 {
+  .livecams-section-1 > h1 {
     font-size: 5rem;
   }
 
-  #livecams-section-2 > h1 {
+  .livecams-section-3 > h1 {
     font-size: 2rem;
   }
 }
@@ -356,7 +356,7 @@
   }
 
   //  neighborhoods page
-  #neighborhoods {
+  .neighborhoods {
     .neighborhoods-hero {
       height: calc(100vh - 4rem);
       h1 {
@@ -371,15 +371,15 @@
   }
 
   //  livecams page
-  #livecams-section-1 > h1 {
+  .livecams-section-1 > h1 {
     font-size: 3rem;
   }
 
-  article.livecams-content > div {
+  .livecams-section-2 > div {
     font-size: 1.4rem;
   }
 
-  #livecams-section-2 {
+  .livecams-section-3 {
     padding: 8vh 0;
     h1 {
       font-size: 1.3rem;

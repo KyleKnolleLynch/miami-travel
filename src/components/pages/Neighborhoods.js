@@ -52,7 +52,7 @@ const Neighborhoods = () => {
 
   return (
     <motion.div
-      id='neighborhoods'
+      className='neighborhoods'
       variants={pageVariants}
       initial='hidden'
       animate='visible'
@@ -61,10 +61,9 @@ const Neighborhoods = () => {
       <Header />
       <div className='neighborhoods-hero'>
         <picture>
-          <source media='(max-width: 600px)' srcSet={imgHeroSm} />
           <source media='(min-width: 768px)' srcSet={imgHero} />
           <img
-            src={imgHero}
+            src={imgHeroSm}
             alt='header-slides'
             loading='lazy'
             style={{ width: '100%', height: '100%' }}

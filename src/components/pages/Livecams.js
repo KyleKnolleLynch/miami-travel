@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { motion } from 'framer-motion'
 import Header from '../layout/header/Header'
-import Section6 from '../sections/Section6'
-import Footer from '../layout/footer/Footer'
 import imgHero from '../../images/livecams-hero.webp'
+import Loader from '../utils/Loader'
+const Section6 = lazy(() => import('../sections/Section6'))
+const Footer = lazy(() => import('../layout/footer/Footer'))
 
 const pageVariants = {
   hidden: {
@@ -33,7 +34,7 @@ const Livecams = () => {
       exit='exit'
     >
       <Header />
-      <section id='livecams-section-1'>
+      <section className='livecams-section-1'>
         <img
           src={imgHero}
           alt='livecams_hero'
@@ -42,7 +43,7 @@ const Livecams = () => {
         />
         <h1>Miami Live Webcams</h1>
       </section>
-      <article className='livecams-content'>
+      <section className='livecams-section-2'>
         <div>
           <h2>Explore Miami with our live webcams</h2>
           <p>
@@ -53,22 +54,24 @@ const Livecams = () => {
             sit ipsam unde atque est repellat incidunt!
           </p>
         </div>
-      </article>
-      <Section6 />
-      <section id='livecams-section-2'>
-        <h1>Coral City Underwater Webcam</h1>
-        <div className='iframe-container'>
-          <iframe
-            title='Coral City Underwater Webcam'
-            src='https://www.youtube.com/embed/7i8ARjIeM2k?autoplay=1'
-            frameBorder='0'
-            allow='accelerometer; fullscreen; autoplay; encrypted-media; gyroscope; picture-in-picture'
-            allowFullScreen
-            loading='lazy'
-          ></iframe>
-        </div>
       </section>
-      <Footer />
+      <Suspense fallback={<Loader />}>
+        <Section6 />
+        <section className='livecams-section-3'>
+          <h1>Coral City Underwater Webcam</h1>
+          <div className='iframe-container'>
+            <iframe
+              title='Coral City Underwater Webcam'
+              src='https://www.youtube.com/embed/7i8ARjIeM2k?autoplay=1'
+              frameBorder='0'
+              allow='accelerometer; fullscreen; autoplay; encrypted-media; gyroscope; picture-in-picture'
+              allowFullScreen
+              loading='lazy'
+            ></iframe>
+          </div>
+        </section>
+        <Footer />
+      </Suspense>
     </motion.div>
   )
 }

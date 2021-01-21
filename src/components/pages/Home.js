@@ -5,14 +5,6 @@ import HeaderSlider from '../layout/header/HeaderSlider'
 import { HeaderData } from '../../data/headerData'
 import Loader from '../utils/Loader'
 import Divider from '../utils/Divider'
-// import Section1 from '../sections/Section1'
-// import Section2 from '../sections/Section2'
-// import Section3 from '../sections/Section3'
-// import Section4 from '../sections/Section4'
-// import Section5 from '../sections/Section5'
-// import Section6 from '../sections/Section6'
-import Footer from '../layout/footer/Footer'
-import ReturnTop from '../utils/ReturnTop'
 
 const Section1 = lazy(() => import('../sections/Section1'))
 const Section2 = lazy(() => import('../sections/Section2'))
@@ -20,6 +12,8 @@ const Section3 = lazy(() => import('../sections/Section3'))
 const Section4 = lazy(() => import('../sections/Section4'))
 const Section5 = lazy(() => import('../sections/Section5'))
 const Section6 = lazy(() => import('../sections/Section6'))
+const Footer = lazy(() => import('../layout/footer/Footer'))
+const ReturnTop = lazy(() => import('../utils/ReturnTop'))
 
 const pageVariants = {
   hidden: {
@@ -52,18 +46,18 @@ const Home = () => {
       <Header />
       <HeaderSlider slides={HeaderData} autoPlay={5} />
       <Divider />
-      <main>
-        <Suspense fallback={<Loader />}>
+      <Suspense fallback={<Loader />}>
+        <main>
           <Section1 />
           <Section2 />
           <Section3 />
           <Section4 />
           <Section5 />
           <Section6 />
-        </Suspense>
-      </main>
-      <Footer />
-      <ReturnTop />
+        </main>
+        <Footer />
+        <ReturnTop />
+      </Suspense>
     </motion.div>
   )
 }
