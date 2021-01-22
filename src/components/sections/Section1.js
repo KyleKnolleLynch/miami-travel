@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import img1 from '../../images/busTours.webp'
-import img2 from '../../images/hot-eats.webp'
+import img2 from '../../images/avalon_hotel.webp'
 import img3 from '../../images/dj.webp'
 import img4 from '../../images/alligator.webp'
 import HotBox from '../utils/HotBox'

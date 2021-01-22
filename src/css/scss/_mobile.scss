@@ -1,4 +1,21 @@
 @include mediaLg {
+  #section1 .hot-section-content {
+    .grid-2.grid-hot {
+      gap: 2rem;
+    }
+    .grid-2.content-box-hot {
+      div:nth-child(1) {
+        padding: 0.5rem;
+        h2 {
+          font-size: 3.2rem;
+        }
+        p {
+          width: auto;
+        }
+      }
+    }
+  }
+
   .neighborhoods > .neighborhoods-display > .neighborhood-grid {
     gap: 2rem;
   }
@@ -31,9 +48,11 @@
   }
 
   //  sections
-  #section1 .grid-hot {
+  #section1 .hot-section-content .grid-2.grid-hot {
     grid-template-columns: 1fr;
+    gap: 6rem;
   }
+
   #section3 {
     height: auto;
     .events-grid {
@@ -270,14 +289,23 @@
   #section1 {
     .hot-section-content {
       .grid-2.grid-hot {
-        grid-gap: 6rem 0;
-        padding: 1.5rem;
-        margin: 6rem auto;
+        padding: 6rem 1rem 10rem;
       }
       .grid-2.content-box-hot {
         min-height: auto;
         div:nth-child(1) {
           padding: 0.2rem;
+          h2 {
+            font-size: 2.4rem;
+            margin-bottom: 0.5rem;
+          }
+          p {
+            font-size: 1.6rem;
+          }
+          a {
+            font-size: 1.4rem;
+            margin: 0.8rem 0;
+          }
         }
       }
     }

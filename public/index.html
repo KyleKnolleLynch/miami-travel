@@ -12,11 +12,15 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/palm_192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link
-      rel="preload"
+      rel="stylesheet"
       href="./line-awesome/css/line-awesome.min.css"
-      as="style"
+      media="print"
+      onload="this.media='all';this.onload=null"
     />
-    <link rel="stylesheet" href="./line-awesome/css/line-awesome.min.css" />
+    <noscript>
+      <link rel="stylesheet" href="./line-awesome/css/line-awesome.min.css" />
+    </noscript>
+
     <title>Travel Miami</title>
 
     <style>
