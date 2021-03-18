@@ -11,22 +11,25 @@ const Section3 = () => {
   const [modal1Open, setModal1Open] = useState(false)
   const [modal2Open, setModal2Open] = useState(false)
 
+  const modalsClose = () => {
+    if (modal1Open) setModal1Open(false)
+    if (modal2Open) setModal2Open(false)
+  }
+
   return (
     <>
-      <section id='section3'>
+      <section id='section3' onClick={() => modalsClose()}>
         <TitleTag title='Upcoming Events' bgColor='rgb(255, 105, 180)' />
         <div className='events-grid'>
-          <div className='events-video-container'>
+          <div
+            className='events-video-container'
+            onClick={() => setModal1Open(!modal1Open)}
+          >
             {modal1Open ? (
-              <VideoModal
-                source={video1}
-                name='frame1'
-                title='marathon-run-video'
-                closeModal={() => setModal1Open(!modal1Open)}
-              />
+              <VideoModal source={video1} />
             ) : (
               <div className='s3-img-container'>
-                <span onClick={() => setModal1Open(!modal1Open)}>
+                <span>
                   <i className='las la-play la-4x'></i>
                 </span>
                 <img
@@ -42,17 +45,15 @@ const Section3 = () => {
               <p>Run to support clean beaches!</p>
             </div>
           </div>
-          <div className='events-video-container'>
+          <div
+            className='events-video-container'
+            onClick={() => setModal2Open(!modal2Open)}
+          >
             {modal2Open ? (
-              <VideoModal
-                source={video2}
-                name='frame2'
-                title='fireworks-video'
-                closeModal={() => setModal2Open(!modal2Open)}
-              />
+              <VideoModal source={video2} />
             ) : (
               <div className='s3-img-container'>
-                <span onClick={() => setModal2Open(!modal2Open)}>
+                <span>
                   <i className='las la-play la-4x'></i>
                 </span>
                 <img

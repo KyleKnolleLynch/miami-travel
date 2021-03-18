@@ -1,26 +1,16 @@
 import React from 'react'
-import closeSvg from '../../images/icons/x-square.svg'
 
-const VideoModal = ({ source, title, name, closeModal }) => {
+const VideoModal = ({ source }) => {
   return (
-    <div className='video-modal-container'>
-      <div className='video-modal'>
-        <img
-          src={closeSvg}
-          alt='close_svg'
-          onClick={closeModal}
-          loading='lazy'
-          style={{ width: '40px', height: '40px' }}
-        />
-        <video
-          src={source}
-          autoPlay
-          loop
-          muted
-          loading='lazy'
-          style={{ width: '100%', height: '100%', border: 'none' }}
-        ></video>
-      </div>
+    <div className='video-modal'>
+      <video
+        src={source}
+        autoPlay
+        loop
+        muted
+        loading='lazy'
+        style={{ width: '100%', height: '100%', border: 'none' }}
+      ></video>
     </div>
   )
 }

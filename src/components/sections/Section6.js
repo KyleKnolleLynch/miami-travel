@@ -91,22 +91,20 @@ const Section6 = () => {
           ))}
         </ul>
         {camData[0] && (
-          <div className='iframe-container'>
-            <iframe
-              title={camTitle || 'windy.com_livecam'}
-              src={
-                camData[0].player.live.available
-                  ? camData[0].player.live.embed
-                  : camData[0].player.day.embed
-              }
-              name='frame1'
-              frameBorder='0'
-              allow='fullscreen; autoplay; picture-in-picture; xr-spatial-tracking; encrypted-media'
-              allowFullScreen
-              sandbox='allow-scripts allow-presentation allow-same-origin allow-popups'
-              loading='lazy'
-            ></iframe>
-          </div>
+          <iframe
+            title={camTitle || 'windy.com_livecam'}
+            src={
+              camData[0].player.live.available
+                ? camData[0].player.live.embed
+                : camData[0].player.day.embed
+            }
+            name='frame1'
+            frameBorder='0'
+            allow='fullscreen; autoplay; picture-in-picture; xr-spatial-tracking; encrypted-media'
+            allowFullScreen
+            sandbox='allow-scripts allow-presentation allow-same-origin allow-popups'
+            loading='lazy'
+          ></iframe>
         )}
 
         <div className='livecam-attr'>

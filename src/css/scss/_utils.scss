@@ -194,47 +194,20 @@ section {
 }
 
 //  video modal
-.video-modal-container {
+.video-modal {
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
   z-index: 7;
-  .video-modal {
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    background: $dark-color;
-    position: relative;
-    img {
-      position: absolute;
-      top: 7vh;
-      right: 20vw;
-      background: $dark-color;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      z-index: 2;
-    }
-    video {
-      object-fit: cover;
-    }
+  video {
+    object-fit: cover;
   }
 }
 
-// iframe container + iframe
-.iframe-container {
-  position: relative;
-  overflow: hidden;
-  padding-top: 56.25%;
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
+//  iframe
+iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
 }
 
 //  text modal
