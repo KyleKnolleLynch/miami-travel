@@ -6,7 +6,7 @@ import Neighborhoods from './components/pages/Neighborhoods'
 import Livecams from './components/pages/Livecams'
 import Credits from './components/pages/Credits'
 
-import './css/main.css'
+import './css/main.min.css'
 
 const App = () => {
   const location = useLocation()
