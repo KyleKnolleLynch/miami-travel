@@ -12,16 +12,14 @@ const App = () => {
   const location = useLocation()
 
   return (
-    <>
-      <AnimatePresence exitBeforeEnter>
-        <Routes location={location} key={location.key}>
-          <Route path='/' element={<Home />} />
-          <Route path='/neighborhoods' element={<Neighborhoods />} />
-          <Route path='/livecams' element={<Livecams />} />
-          <Route path='/credits' element={<Credits />} />
-        </Routes>
-      </AnimatePresence>
-    </>
+    <AnimatePresence exitBeforeEnter>
+      <Routes location={location} key={location.pathname}>
+        <Route path='/' element={<Home />} />
+        <Route path='/neighborhoods' element={<Neighborhoods />} />
+        <Route path='/livecams' element={<Livecams />} />
+        <Route path='/credits' element={<Credits />} />
+      </Routes>
+    </AnimatePresence>
   )
 }
 
