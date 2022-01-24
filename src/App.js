@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import Home from './components/pages/Home'
 import Neighborhoods from './components/pages/Neighborhoods'
@@ -14,12 +14,12 @@ const App = () => {
   return (
     <>
       <AnimatePresence exitBeforeEnter>
-        <Switch location={location} key={location.key}>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/neighborhoods' component={Neighborhoods} />
-          <Route exact path='/livecams' component={Livecams} />
-          <Route exact path='/credits' component={Credits} />
-        </Switch>
+        <Routes location={location} key={location.key}>
+          <Route path='/' element={<Home />} />
+          <Route path='/neighborhoods' element={<Neighborhoods />} />
+          <Route path='/livecams' element={<Livecams />} />
+          <Route path='/credits' element={<Credits />} />
+        </Routes>
       </AnimatePresence>
     </>
   )
