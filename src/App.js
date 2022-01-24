@@ -15,9 +15,9 @@ const App = () => {
     <AnimatePresence exitBeforeEnter>
       <Routes location={location} key={location.pathname}>
         <Route path='/' element={<Home />} />
-        <Route path='/neighborhoods' element={<Neighborhoods />} />
-        <Route path='/livecams' element={<Livecams />} />
-        <Route path='/credits' element={<Credits />} />
+        <Route path='neighborhoods' element={<Neighborhoods />} />
+        <Route path='livecams' element={<Livecams />} />
+        <Route path='credits' element={<Credits />} />
       </Routes>
     </AnimatePresence>
   )
